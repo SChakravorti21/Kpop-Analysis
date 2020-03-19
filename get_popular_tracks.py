@@ -5,7 +5,7 @@ import utils
 from spotipy.oauth2 import SpotifyClientCredentials
 
 
-sp = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials())
+sp = utils.get_spotipy_instance()
 
 
 def get_popular_tracks(artists_file):

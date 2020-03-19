@@ -18,7 +18,7 @@ GENRE_FILES  = { "k-pop"           : "data/kpop.json",
                  "pop"             : "data/pop.json" }
 
 
-sp = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials())
+sp = utils.get_spotipy_instance()
 artists_by_genre = {}
 
 
