@@ -13,8 +13,8 @@ FEATURE_KEYS = ["acousticness", "danceability", "energy",
                 "speechiness", "tempo", "valence"]
 
 
-def get_track_df(spark: SparkSession, track_files: List[str]):
-    df = spark.read.json(track_files, multiLine=True)
+def get_track_df(spark: SparkSession, track_folder: str):
+    df = spark.read.json(track_folder, multiLine=True)
     df.persist(storageLevel=StorageLevel.MEMORY_ONLY)
     return df
 
@@ -25,7 +25,7 @@ def write_stats(df: DataFrame, path: str):
     utils.write_json(desc_json, path)
 
 
-def show_hist(dfs: Dict[str, DataFrame], feature: str):
+def save_hist(dfs: Dict[str, DataFrame], feature: str):
     bound_min, bound_max = float("inf"), float("-inf")
     genre_series: Dict[str, List[float]] = {}
     
@@ -64,21 +64,17 @@ def main(spark: SparkSession):
     genre_dfs: Dict[str, DataFrame] = {}
     
     for genre in ("kpop", "pop"):
-        genre_tracks = os.listdir(os.path.join("data", genre))
-        track_files = [os.path.join("data", genre, track) 
-                       for track in genre_tracks]
-        
         # Construct a Spark DataFrame out of the tracks for this genre
-        df = get_track_df(spark, track_files)
+        track_folder = os.path.join("data", genre)
+        df = get_track_df(spark, track_folder)
         genre_dfs[genre] = df
 
         # Get a basic overview of track features like liveness, acousticness, etc.
         stats_path = os.path.join("analysis", f"{genre}-overview.json")
         stats = write_stats(df, stats_path)
 
-
     for feature in FEATURE_KEYS:
-        show_hist(genre_dfs, feature)
+        save_hist(genre_dfs, feature)
 
 
 if __name__ == "__main__":
