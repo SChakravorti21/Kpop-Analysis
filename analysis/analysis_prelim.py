@@ -66,8 +66,8 @@ def main(spark: SparkSession):
     
     for genre in ("kpop", "pop"):
         # Construct a Spark DataFrame out of the tracks for this genre
-        track_folder = os.path.join("data", genre)
-        df = get_track_df(spark, track_folder)
+        track_features = os.path.join("data", f"{genre}-track-features.json")
+        df = get_track_df(spark, track_features)
         genre_dfs[genre] = df
 
         # Get a basic overview of track features like liveness, acousticness, etc.

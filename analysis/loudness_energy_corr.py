@@ -8,11 +8,11 @@ from pyspark.ml.linalg import Vectors, VectorUDT
 from pyspark.ml.stat import Correlation
 
 
-TRACK_FOLDERS = "data/*pop/*.json"
+TRACK_FEATURES = "data/*pop-track-features.json"
 
 
 def main(spark: SparkSession):
-    df = spark.read.json(TRACK_FOLDERS, multiLine=True)
+    df = spark.read.json(TRACK_FEATURES, multiLine=True)
     
     vector_mapper = udf(lambda row: Vectors.dense(row), VectorUDT())
     df = df.withColumn("features", vector_mapper(array("loudness", "energy")))
