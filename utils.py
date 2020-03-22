@@ -17,12 +17,16 @@ def get_spotipy_instance():
     return spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials())
 
 
-def write_json(result, output_path):
+def makedirs(path):
     try:
-        os.makedirs(os.path.dirname(output_path))
+        os.makedirs(os.path.dirname(path))
     except OSError as e:
         if e.errno != errno.EEXIST:
             raise
+
+
+def write_json(result, output_path):
+    makedirs(output_path)
 
     with open(output_path, "w") as f:
         json.dump(result, f, indent=4)
