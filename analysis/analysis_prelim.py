@@ -53,7 +53,8 @@ def save_hist(dfs: Dict[str, DataFrame], feature: str):
     plt.title(feature)
     plt.legend(loc='upper right')
 
-    fig_path = os.path.join("analysis", "charts", f"{feature}-comp.png")
+    fig_path = os.path.join("analysis", "results", 
+                            "charts", f"{feature}-comp.png")
     utils.makedirs(fig_path)
 
     fig.savefig(fig_path)
@@ -70,7 +71,8 @@ def main(spark: SparkSession):
         genre_dfs[genre] = df
 
         # Get a basic overview of track features like liveness, acousticness, etc.
-        stats_path = os.path.join("analysis", f"{genre}-overview.json")
+        stats_path = os.path.join("analysis", "results", 
+                                  f"{genre}-overview.json")
         stats = write_stats(df, stats_path)
 
     for feature in FEATURE_KEYS:
