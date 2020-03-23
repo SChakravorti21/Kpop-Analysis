@@ -54,7 +54,7 @@ def save_hist(dfs: Dict[str, DataFrame], feature: str):
     plt.legend(loc='upper right')
 
     fig_path = os.path.join("analysis", "results", 
-                            "charts", f"{feature}-comp.png")
+                            "charts", f"comp-{feature}.png")
     utils.makedirs(fig_path)
 
     fig.savefig(fig_path)
