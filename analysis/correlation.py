@@ -45,7 +45,8 @@ def loudness_energy_corr(spark: SparkSession):
 
     features = ["loudness", "energy"]
     df, corr = find_correlation(spark, features)
-    save_corr_heatmap(corr, features, corr_path)
+    save_corr_heatmap(corr, features, corr_path,
+                      title="Loudness/Energy Correlation Matrix")
 
     pairs = df.select(*features).collect()
     x = [pair["loudness"] for pair in pairs]
@@ -74,4 +75,5 @@ if __name__ == "__main__":
         _, corr = find_correlation(spark, FEATURE_KEYS, features_file)
         corr_path = os.path.join("analysis", "results", 
                                  "charts", f"corr-all-{genre}.png")
-        save_corr_heatmap(corr, FEATURE_KEYS, corr_path)
+        save_corr_heatmap(corr, FEATURE_KEYS, corr_path,
+                          title=f"{genre.capitalize()} Correlation Matrix")
