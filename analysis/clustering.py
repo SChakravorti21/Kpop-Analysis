@@ -12,19 +12,27 @@ from typing import Callable
 
 
 # UDF we can use to add feature column to DataFrame
+SEED           = 17386423
 VECTOR_MAPPER  = udf(lambda row: Vectors.dense(row), VectorUDT())
 TRACK_FEATURES = os.path.join("data", "*pop-track-features.json")
 
 
-def find_elbow(spark: SparkSession, dataset: DataFrame, 
-               estimator: Callable, estimator_name: str):
+def train_and_save_model(dataset: DataFrame, estimator: Callable, 
+                         k: int, model_path: str):
+    dataset = dataset.withColumn("features", VECTOR_MAPPER(array(*FEATURE_KEYS)))
+    kmeans = estimator(k=k, seed=SEED)
+    model = kmeans.fit(dataset)
+    model.write().overwrite().save(model_path)
+
+
+def find_elbow(dataset: DataFrame, estimator: Callable, estimator_name: str):
     dataset = dataset.withColumn("features", VECTOR_MAPPER(array(*FEATURE_KEYS)))
     x, y = [], []
 
     for iteration, k in enumerate(range(2, 50)):
         # Define the model, seed should be fixed between iteration
         # to prevent it from being a source of variance
-        kmeans = estimator(k=k, seed=17386423)
+        kmeans = estimator(k=k, seed=SEED)
         model = kmeans.fit(dataset)
 
         # Make predictions; we are going to predict straight on our
@@ -58,5 +66,10 @@ if __name__ == "__main__":
         estimator, est_name = BisectingKMeans, "bisect-k-means"
 
     if sys.argv[1] == "elbow":
-        find_elbow(spark, df, estimator, est_name)
+        find_elbow(df, estimator, est_name)
+    elif sys.argv[1] == "train":
+        k = int(sys.argv[3])
+        model_output = os.path.join("analysis", "models", f"{est_name}-{k}")
+        train_and_save_model(df, estimator, k, model_output)
+
 
