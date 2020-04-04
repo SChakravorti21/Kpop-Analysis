@@ -1,4 +1,5 @@
 import os
+import sys
 import matplotlib.pyplot as plt
 import seaborn as sns
 from pyspark.sql import SparkSession, DataFrame
@@ -27,11 +28,11 @@ def find_elbow(spark: SparkSession, dataset: DataFrame):
         # Make predictions; we are going to predict straight on our
         # training dataset since the clustering was derived from it
         predictions = model.transform(dataset)
-        
+
         # Compute error
         evaluator = ClusteringEvaluator()
         silhouette = evaluator.evaluate(predictions)
-        
+
         x.append(iteration)
         y.append(silhouette)
 
@@ -48,6 +49,7 @@ if __name__ == "__main__":
 
     # Load both pop and kpop data
     df = spark.read.json(TRACK_FEATURES, multiLine=True)
-    find_elbow(spark, df)
-    
+
+    if sys.argv[1] == "elbow":
+        find_elbow(spark, df)
 
