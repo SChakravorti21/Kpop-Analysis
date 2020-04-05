@@ -1,5 +1,6 @@
 import os
 import sys
+import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
@@ -23,6 +24,42 @@ VECTOR_MAPPER  = udf(lambda row: Vectors.dense(row), VectorUDT())
 TRACK_FEATURES = os.path.join("data", "*pop-track-features.json")
 
 
+def perform_pca(dataset: DataFrame, k: int, model_name: str):
+    # Since we want to plot the clusters, it is important
+    # downsize the dimensions to at most 3 dimensions.
+    # We can use PCA with 3 principal components for this.
+    pca = PCA(k=k, inputCol="features", outputCol="pcaFeatures")
+    pca_model = pca.fit(dataset)
+    rows = pca_model \
+                .transform(dataset) \
+                .select("clusterNum", "pcaFeatures") \
+                .collect()
+
+    # Now we'll plot the clusters as a 3D scatter plot with
+    # each point's color corresponding to its cluster.
+    # Cast cluterNum to string so it is treated as categorical
+    # data for plotting purposes.
+    axes = zip(*[row["pcaFeatures"] for row in rows])
+    colors  = pd.Categorical([row["clusterNum"] for row in rows])
+
+    if k == 2:
+        x, y = axes
+        fig = plt.figure(figsize=(15, 15))
+        sns.scatterplot(x=x, y=y, hue=colors)
+    if k == 3:
+        x, y, z = axes
+        plot_df = pd.DataFrame({"PCA 1": x, "PCA 2": y, "PCA 3": z, "cluster": colors})
+        g = sns.PairGrid(plot_df, hue="cluster", palette="coolwarm")
+        g = g.map(sns.scatterplot, linewidths=0.75, edgecolor="w", s=40)
+        g = g.add_legend()
+        g.fig.set_size_inches(15, 15)
+
+    # Specify number of principal components and clusters in model
+    image_path = os.path.join("analysis", "results", 
+                              "charts", f"pca-{k}-{model_name}.png")
+    plt.savefig(image_path)
+
+
 def plot_clusters(dataset: DataFrame, model_path: str):
     # Load the KMeans (or BisectingKMeans) model and derive
     # the cluster each song belong to
@@ -34,30 +71,11 @@ def plot_clusters(dataset: DataFrame, model_path: str):
     # to the DF, so we can pass this to PCA model as well
     dataset = kmeans_model.transform(dataset)
 
-    # Since we want to plot the clusters, it is important
-    # downsize the dimensions to at most 3 dimensions.
-    # We can use PCA with 3 principal components for this.
-    pca = PCA(k=2, inputCol="features", outputCol="pcaFeatures")
-    pca_model = pca.fit(dataset)
-    rows = pca_model \
-                .transform(dataset) \
-                .select("clusterNum", "pcaFeatures") \
-                .collect()
-
-    # Now we'll plot the clusters as a 3D scatter plot with
-    # each point's color corresponding to its cluster
-    fig = plt.figure(figsize=(15, 15))
-    ax = fig.subplots()
-
-    x, y = zip(*[row["pcaFeatures"] for row in rows])
-    colors  = [row["clusterNum"] for row in rows]
-    ax.scatter(x, y, c=colors)
-
     # The model path is technically a directory, so we need
     # to do this to get the final directory's name
     model_name = os.path.basename(os.path.dirname(model_path))
-    plt.savefig(os.path.join("analysis", "results", 
-                             "charts", f"pca-{model_name}.png"))
+    perform_pca(dataset, 2, model_name)
+    perform_pca(dataset, 3, model_name)
 
 
 def train_and_save_model(dataset: DataFrame, estimator: Callable, 
