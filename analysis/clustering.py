@@ -1,14 +1,20 @@
 import os
 import sys
-import matplotlib.pyplot as plt
 import seaborn as sns
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+from typing import Callable
 from pyspark.sql import SparkSession, DataFrame
 from pyspark.sql.functions import udf, array
+from pyspark.ml.feature import PCA
 from pyspark.ml.linalg import Vectors, VectorUDT
-from pyspark.ml.clustering import KMeans, BisectingKMeans
+from pyspark.ml.clustering import (
+    KMeans, 
+    BisectingKMeans, 
+    KMeansModel, 
+    BisectingKMeansModel)
 from pyspark.ml.evaluation import ClusteringEvaluator
 from analysis_prelim import FEATURE_KEYS
-from typing import Callable
 
 
 # UDF we can use to add feature column to DataFrame
@@ -17,16 +23,51 @@ VECTOR_MAPPER  = udf(lambda row: Vectors.dense(row), VectorUDT())
 TRACK_FEATURES = os.path.join("data", "*pop-track-features.json")
 
 
+def plot_clusters(dataset: DataFrame, model_path: str):
+    # Load the KMeans (or BisectingKMeans) model and derive
+    # the cluster each song belong to
+    model_type = (BisectingKMeansModel 
+                 if "bisect-k" in model_path 
+                 else KMeansModel)
+    kmeans_model = model_type.load(model_path)
+    # The transformation simply adds a clusterNum column
+    # to the DF, so we can pass this to PCA model as well
+    dataset = kmeans_model.transform(dataset)
+
+    # Since we want to plot the clusters, it is important
+    # downsize the dimensions to at most 3 dimensions.
+    # We can use PCA with 3 principal components for this.
+    pca = PCA(k=2, inputCol="features", outputCol="pcaFeatures")
+    pca_model = pca.fit(dataset)
+    rows = pca_model \
+                .transform(dataset) \
+                .select("clusterNum", "pcaFeatures") \
+                .collect()
+
+    # Now we'll plot the clusters as a 3D scatter plot with
+    # each point's color corresponding to its cluster
+    fig = plt.figure(figsize=(15, 15))
+    ax = fig.subplots()
+
+    x, y = zip(*[row["pcaFeatures"] for row in rows])
+    colors  = [row["clusterNum"] for row in rows]
+    ax.scatter(x, y, c=colors)
+
+    # The model path is technically a directory, so we need
+    # to do this to get the final directory's name
+    model_name = os.path.basename(os.path.dirname(model_path))
+    plt.savefig(os.path.join("analysis", "results", 
+                             "charts", f"pca-{model_name}.png"))
+
+
 def train_and_save_model(dataset: DataFrame, estimator: Callable, 
                          k: int, model_path: str):
-    dataset = dataset.withColumn("features", VECTOR_MAPPER(array(*FEATURE_KEYS)))
-    kmeans = estimator(k=k, seed=SEED)
+    kmeans = estimator(k=k, seed=SEED, predictionCol="clusterNum")
     model = kmeans.fit(dataset)
     model.write().overwrite().save(model_path)
 
 
 def find_elbow(dataset: DataFrame, estimator: Callable, estimator_name: str):
-    dataset = dataset.withColumn("features", VECTOR_MAPPER(array(*FEATURE_KEYS)))
     x, y = [], []
 
     for iteration, k in enumerate(range(2, 50)):
@@ -60,6 +101,7 @@ if __name__ == "__main__":
 
     # Load both pop and kpop data
     df = spark.read.json(TRACK_FEATURES, multiLine=True).cache()
+    df = df.withColumn("features", VECTOR_MAPPER(array(*FEATURE_KEYS)))
     estimator, est_name = KMeans, "k-means"
 
     if len(sys.argv) > 2 and sys.argv[2] == "bisect":
@@ -71,5 +113,5 @@ if __name__ == "__main__":
         k = int(sys.argv[3])
         model_output = os.path.join("analysis", "models", f"{est_name}-{k}")
         train_and_save_model(df, estimator, k, model_output)
-
-
+    elif sys.argv[1] == "plot":
+        plot_clusters(df, sys.argv[2])
