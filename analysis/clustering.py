@@ -119,11 +119,11 @@ def analyze_clusters(spark: SparkSession, dataset: DataFrame,
         # Sample some of the most popular songs for this cluster
         pop_songs  = pop_subset \
             .filter(col("clusterNum")  == clusterNum) \
-            .orderBy("popularity") \
+            .orderBy(col("popularity").desc()) \
             .take(3)
         kpop_songs = kpop_subset \
             .filter(col("clusterNum")  == clusterNum) \
-            .orderBy("popularity") \
+            .orderBy(col("popularity").desc()) \
             .take(3)
 
         print(f"{clusterNum:<2}\t\t\t{pop:<2} / {perc_pop:.2f}%\t\t{kpop:<2} / {perc_kpop:.2f}%")
