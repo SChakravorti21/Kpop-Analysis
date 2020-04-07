@@ -31,6 +31,7 @@ POP_TRACKS     = os.path.join("data", "pop-tracks.json")
 KPOP_TRACKS    = os.path.join("data", "kpop-tracks.json")
 KPOP_TRACKS_LG = os.path.join("data", "kpop-tracks-lg.json")
 
+
 class DatasetComposition(enum.Enum):
     MIXED_POP_KPOP  = 0
     ONLY_KPOP       = 1
