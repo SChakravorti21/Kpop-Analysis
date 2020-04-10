@@ -10,25 +10,26 @@ from mpl_toolkits.mplot3d import Axes3D
 from typing import Callable, Union
 from pyspark.sql import SparkSession, DataFrame
 from pyspark.sql.functions import (
-    udf, array, lit, 
-    first, col, 
+    udf, array, lit,
+    first, col,
     get_json_object)
 from pyspark.ml.feature import PCA
 from pyspark.ml.linalg import Vectors, VectorUDT
 from pyspark.ml.clustering import (
-    KMeans, 
-    BisectingKMeans, 
-    KMeansModel, 
+    KMeans,
+    BisectingKMeans,
+    KMeansModel,
     BisectingKMeansModel)
 from pyspark.ml.evaluation import ClusteringEvaluator
 from analysis_prelim import FEATURE_KEYS
 
-
-# UDF we can use to add feature column to DataFrame
+# Seed KMeans operations for reproducibility
 SEED           = 17386423
+# UDF we can use to add feature column to DataFrame
 VECTOR_MAPPER  = udf(lambda row: Vectors.dense(row), VectorUDT())
 POP_TRACKS     = os.path.join("data", "pop-tracks.json")
 KPOP_TRACKS    = os.path.join("data", "kpop-tracks.json")
+KPOP_TRACKS_LG = os.path.join("data", "kpop-tracks-lg.json")
 
 
 class DatasetComposition(enum.Enum):
@@ -44,17 +45,18 @@ class ClusterAnalyzer():
             self.features       = FEATURE_KEYS
             self.dataset_name   = "general"
         else:
-            self.tracks         = os.path.join("data", "kpop-track-features-lg.json")
+            self.tracks         = os.path.join("data", "kpop-track-features.json")
             self.features       = FEATURE_KEYS
             self.dataset_name   = "kpop"
 
         self.k = k
-        self.kmeans_type = kmeans_type
-        self.kmeans_name = ("k-means" 
-                            if kmeans_type == KMeans 
-                            else "bisect-k-means")
-        self.model_name  = f"{self.dataset_name}-{self.kmeans_name}-{k}"
-        self.model_path  = os.path.join("analysis", "models", self.model_name)
+        self.dataset_type = kind
+        self.kmeans_type  = kmeans_type
+        self.kmeans_name  = ("k-means"
+                             if kmeans_type == KMeans
+                             else "bisect-k-means")
+        self.model_name   = f"{self.dataset_name}-{self.kmeans_name}-{k}"
+        self.model_path   = os.path.join("analysis", "models", self.model_name)
 
         self.spark = SparkSession \
             .builder \
@@ -68,16 +70,25 @@ class ClusterAnalyzer():
             .cache()
 
     def analyze_clusters(self):
+        if self.dataset_type == DatasetComposition.MIXED_POP_KPOP:
+            self._analyze_general()
+        else:
+            self._analyze_kpop()
+
+    def _analyze_general(self):
         # Figure out which songs belong to which clusters
         kmeans_model = self._load_kmeans_model()
         dataset = kmeans_model.transform(self.dataset).cache()
+
+        # Show the parameters of each cluster center
+        self._print_cluster_stats(kmeans_model)
 
         # Now we need to figure out which songs are pop vs. k-pop
         pop_tracks  = self.spark.read.json(POP_TRACKS, multiLine=True) \
                         .withColumn("genre-pop", lit(1)) \
                         .withColumn("genre-kpop", lit(0)) \
                         .select(
-                            "id", "genre-pop", "genre-kpop", 
+                            "id", "genre-pop", "genre-kpop",
                             "name", "popularity",
                             col("external_urls.spotify").alias("track-url"),
                             col("artists.name").alias("track-artists"))
@@ -85,11 +96,11 @@ class ClusterAnalyzer():
                         .withColumn("genre-pop", lit(0)) \
                         .withColumn("genre-kpop", lit(1)) \
                         .select(
-                            "id", "genre-pop", "genre-kpop", 
+                            "id", "genre-pop", "genre-kpop",
                             "name", "popularity",
                             col("external_urls.spotify").alias("track-url"),
                             col("artists.name").alias("track-artists"))
-        
+
         # Associate each song with its genre
         # (obviously this is a slightly convoluted way of doing this,
         # but it gives me some practice doing joins with DataFrames)
@@ -120,14 +131,6 @@ class ClusterAnalyzer():
             key=lambda cluster: max(cluster["perc-pop"], cluster["perc-kpop"])
         )
 
-        # Print out the characteristics of each cluster so we can
-        # examine what makes each cluster unique
-        wrapper_df     = pd.DataFrame(kmeans_model.clusterCenters(), columns=self.features)
-        string_wrapper = io.StringIO()
-        wrapper_df.to_csv(string_wrapper, sep='\t', float_format="%.6f")
-        table          = string_wrapper.getvalue()
-        print(table, "\n")
-
         # Print out what percent of each cluster is pop vs. kpop,
         # plus offer some sample songs for diving a bit deeper
         print("Cluster #\tPop / %\t\t\tKpop / %")
@@ -152,9 +155,54 @@ class ClusterAnalyzer():
 
             for song in pop_songs:
                 print(f"\tPop:  {song['name']}, {', '.join(song['track-artists'])}\n\t\t({song['track-url']})")
-            
+
             for song in kpop_songs:
                 print(f"\tKpop: {song['name']}, {', '.join(song['track-artists'])}\n\t\t({song['track-url']})")
+
+            print()
+
+    def _analyze_kpop(self):
+        # Figure out which songs belong to which clusters
+        kmeans_model = self._load_kmeans_model()
+        predictions  = kmeans_model.transform(self.dataset).cache()
+        total_tracks = predictions.count()
+
+        # Show the parameters of each cluster center
+        self._print_cluster_stats(kmeans_model)
+
+        # Get track details
+        kpop_tracks = self.spark \
+            .read.json(KPOP_TRACKS, multiLine=True) \
+            .select(
+                "id", "name", "popularity",
+                col("external_urls.spotify").alias("track-url"),
+                col("artists.name").alias("track-artists")) \
+            .join(predictions, "id") \
+            .cache()
+
+        # Show largest clusters first
+        cluster_info = predictions \
+            .groupBy("clusterNum") \
+            .count() \
+            .withColumnRenamed("count", "numTracks") \
+            .orderBy(col("numTracks").desc()) \
+            .collect()
+
+        # Print size and sample songs for each cluster
+        for cluster in cluster_info:
+            cluster_num = cluster["clusterNum"]
+            num_tracks  = cluster["numTracks"]
+            rel_size    = num_tracks / total_tracks * 100
+
+            sample_songs = kpop_tracks \
+                .filter(col("clusterNum") == cluster_num) \
+                .orderBy(col("popularity").desc()) \
+                .take(5)
+
+            print(f"{cluster_num:<2}: {num_tracks} tracks ({rel_size:.2f}%)")
+
+            for song in sample_songs:
+                print(f"\t{song['name']}, {', '.join(song['track-artists'])}\n\t\t({song['track-url']})")
 
             print()
 
@@ -171,10 +219,10 @@ class ClusterAnalyzer():
         self._perform_pca(dataset, 3)
 
     def train_and_save_model(self):
-        kmeans = self.kmeans_type(k=self.k, seed=SEED, 
+        kmeans = self.kmeans_type(k=self.k, seed=SEED,
             predictionCol="clusterNum")
         model = kmeans.fit(self.dataset)
-        
+
         # Save the model to disk for later usage
         model_path = os.path.join("analysis", "models", self.model_name)
         model.write().overwrite().save(model_path)
@@ -234,7 +282,7 @@ class ClusterAnalyzer():
             g.fig.set_size_inches(15, 15)
 
         # Specify number of principal components and clusters in model
-        image_path = os.path.join("analysis", "results", 
+        image_path = os.path.join("analysis", "results",
                                   "charts", f"pca-{k}-{self.model_name}.png")
         plt.savefig(image_path)
 
@@ -245,10 +293,19 @@ class ClusterAnalyzer():
         and can therefore be used similarly.
         """
 
-        model_type = (BisectingKMeansModel 
-                      if "bisect-k" in self.model_path 
+        model_type = (BisectingKMeansModel
+                      if "bisect-k" in self.model_path
                       else KMeansModel)
         return model_type.load(self.model_path)
+
+    def _print_cluster_stats(self, kmeans_model: Union[KMeansModel, BisectingKMeansModel]):
+        # Print out the characteristics of each cluster so we can
+        # examine what makes each cluster unique
+        wrapper_df     = pd.DataFrame(kmeans_model.clusterCenters(), columns=self.features)
+        string_wrapper = io.StringIO()
+        wrapper_df.to_csv(string_wrapper, sep='\t', float_format="%.6f")
+        table          = string_wrapper.getvalue()
+        print(table, "\n")
 
 
 if __name__ == "__main__":
@@ -258,7 +315,7 @@ if __name__ == "__main__":
         estimator = KMeans
 
     k = int(sys.argv[3]) if len(sys.argv) > 3 else 1
-    analyzer = ClusterAnalyzer(DatasetComposition.MIXED_POP_KPOP, k, estimator)
+    analyzer = ClusterAnalyzer(DatasetComposition.ONLY_KPOP, k, estimator)
 
     if sys.argv[1] == "elbow":
         analyzer.find_elbow()
