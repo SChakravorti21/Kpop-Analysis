@@ -1,0 +1,202 @@
+8946
+	acousticness	danceability	energy	liveness	speechiness	valence
+0	0.085607	0.702125	0.858895	0.184960	0.087484	0.760649
+1	0.517321	0.529154	0.655466	0.729538	0.096794	0.415845
+2	0.074500	0.609177	0.788980	0.203627	0.082591	0.404201
+3	0.092130	0.573452	0.879246	0.783570	0.110497	0.469847
+4	0.377496	0.661741	0.731067	0.165072	0.074728	0.602917
+5	0.629593	0.520919	0.481752	0.161856	0.043811	0.299590
+ 
+
+0 : 3382 tracks (37.80%)
+	척 Love is a lie, WINNER
+		(https://open.spotify.com/track/2gpBXMv2yGwq1icZKpcu6f)
+	Encore, Beast
+		(https://open.spotify.com/track/5A2qRypDnd7DNjqbKDYc3Z)
+	Valkyrie, ONEUS
+		(https://open.spotify.com/track/0oNFVyzwK6TFdFHSsD1dmC)
+	Cause You're My Star, Apink
+		(https://open.spotify.com/track/1432L5PElRfi7h1jM8Qinh)
+	With, KARA
+		(https://open.spotify.com/track/57pUXqfKkJ6OQAQASaVztD)
+	소름 Chill, EXO
+		(https://open.spotify.com/track/0NYI7lXYvyEhpjP0yWAjRg)
+	Mistake, CLC
+		(https://open.spotify.com/track/5Lv0CuJ4CIqmTrgvOpBdvG)
+	Stay Together - KR Ver., 2NE1
+		(https://open.spotify.com/track/20jiyKvtP7xzzlr3MhiM1s)
+	MoMoMo - Chinese Ver., WJSN
+		(https://open.spotify.com/track/2goperCscn74CcIchvKFB1)
+	Lucky One - Chinese Version Instrumental, EXO
+		(https://open.spotify.com/track/0JBEpXJ36tJQNjiGSmcZSQ)
+	Ding Dong, TWICE
+		(https://open.spotify.com/track/3aLJn2kiqCmb11Sivrpewu)
+	GO CRAZY!, 2PM
+		(https://open.spotify.com/track/2hCUB3kUO0EiV26AG5v11T)
+	CAPTIVATE, CNBLUE
+		(https://open.spotify.com/track/0HXfVtTAVOe61KLpY5GvMs)
+	Fantastic, Weki Meki
+		(https://open.spotify.com/track/2ScUiUJMIwd2MMBtZDsbcG)
+	Let' go Girls' Generation! - Short Version, Girls' Generation
+		(https://open.spotify.com/track/7IVMnwrvPd3dHje3agNox1)
+
+2 : 2493 tracks (27.87%)
+	Kiss Yo, SHINee
+		(https://open.spotify.com/track/0tx9rMKffYsF6NdGUUR2JW)
+	사랑한단 말 The Word, Love, Taecyeon, Chansung
+		(https://open.spotify.com/track/7s1Muhx3niKWUMZeHeSiRP)
+	Insane (Inst.), BTOB
+		(https://open.spotify.com/track/3u7HXZq135whnCtmAbDm83)
+	Intro: The Most Beautiful Moment In Life, BTS
+		(https://open.spotify.com/track/28Ikjb8JEJe2crktTTihjd)
+	Replay (PM 01:27) - Live, NCT 127
+		(https://open.spotify.com/track/3DNrbDrQf01vTNRrtDCD7Q)
+	GOOD NIGHT - Japanese ver., DREAMCATCHER
+		(https://open.spotify.com/track/1KBEa6S088n6PyHpr0YSTu)
+	Intro, CNBLUE
+		(https://open.spotify.com/track/3FdgcvMfHTJM6BRWxomdJ8)
+	Bing Bing, Red Velvet
+		(https://open.spotify.com/track/6u78votmpGuKAE4BOeJtRC)
+	Original Edit Original Editted Korean Version, T-ara
+		(https://open.spotify.com/track/7DSe0o51SfKTwXMb82L64U)
+	I’m In Love With The HERO, Girls' Generation
+		(https://open.spotify.com/track/1DV7ULEGRGU78WNmTjbvzZ)
+	Dear. Boy, Wonder Girls
+		(https://open.spotify.com/track/3cDSDfghTqoYLJWYhAieOL)
+	GO - 216 iKONCERT SHOWTIME TOUR IN SEOUL LIVE, BOBBY
+		(https://open.spotify.com/track/3faD5vNPbn1CyD4svKHIeb)
+	Silver Spoon, BTS
+		(https://open.spotify.com/track/2VgPA0WnwvE2nbltxa3BHz)
+	HANDS UP - Instrumental, B.A.P
+		(https://open.spotify.com/track/3Ls2i8eeYNGzBoepSGNpAU)
+	One and Only One, TVXQ!
+		(https://open.spotify.com/track/6qiKni7b58CM0rPJgWOWsg)
+
+4 : 1186 tracks (13.26%)
+	Red Thread, ONEUS
+		(https://open.spotify.com/track/5eOOac3GeqhAl1Etnst67h)
+	Waggy, Mamamoo
+		(https://open.spotify.com/track/7BQISmFaKB4uhpDBv6eeA6)
+	Hey,Love Japanese ver., NU'EST
+		(https://open.spotify.com/track/6yGNSuFRemeYP6u18SvXYt)
+	LIVIN' IT UP, Monsta X
+		(https://open.spotify.com/track/5usYKzC0nTc4cCCfBOlNHh)
+	GLOW, Stray Kids
+		(https://open.spotify.com/track/7H6AnhZQDrzm8JPKcvD1KC)
+	Still falls the rain - Japanese ver., AOA
+		(https://open.spotify.com/track/4pAa6oMQbpc0Q5L9AXOLGG)
+	Sunrise, GFRIEND
+		(https://open.spotify.com/track/1e7eOq89QU6vGYCJp9yW2L)
+	Hold your hand, CLC
+		(https://open.spotify.com/track/7LiQ91maJWnMgxVDGzCRTJ)
+	In Those Days, KARA
+		(https://open.spotify.com/track/58gbWdiWVHLpAVUtb5xdZ5)
+	%%(Eung Eung), Apink
+		(https://open.spotify.com/track/6MiGIhcqRysLfTTeTEgSuv)
+	TONIGHT, WINNER
+		(https://open.spotify.com/track/6acV9s3giynUR6pqx4EYhw)
+	Baby Don't Cry, EXO
+		(https://open.spotify.com/track/7LK08mnDnjpiRzNCdrkMLI)
+	Daybreak, DREAMCATCHER
+		(https://open.spotify.com/track/36p6oD9Hkg2QTdp4KXc7y4)
+	How To Love, Beast
+		(https://open.spotify.com/track/167MBiMHpxoA2nlNh4Hjoh)
+	All Night Long, 2PM
+		(https://open.spotify.com/track/1Fi8I5q8gYNBMkAWyTTSeu)
+
+3 : 1013 tracks (11.32%)
+	Girls' Generation - Live, Girls' Generation
+		(https://open.spotify.com/track/1hZRUichsA4T1UrYAQvTeK)
+	BAD BOY - BIGBANG JAPAN DOME TOUR 2017 -LAST DANCE- : THE FINAL, BIGBANG
+		(https://open.spotify.com/track/6YqBTH2T1oIomqFnbrmohK)
+	Fantastic Baby - Live, BIGBANG
+		(https://open.spotify.com/track/6rQRsoOekvSDllHvs822aG)
+	WE LIKE 2 PARTY - KR Ver. BIGBANG SPECIAL EVENT 2017, BIGBANG
+		(https://open.spotify.com/track/7cEowM5L6ahBydSsEJYAxs)
+	Interlude - This Dear Ocean, TVXQ!
+		(https://open.spotify.com/track/6MCXhWPj62FzYNRsIWPHOU)
+	Scream - Live, 2NE1
+		(https://open.spotify.com/track/00XZtZJZ3ZYxQ4OyMTTQWg)
+	Oh! - Live, Girls' Generation
+		(https://open.spotify.com/track/0F2kMWTJsbakPYDmJ8bcxv)
+	MAMA - Live, EXO
+		(https://open.spotify.com/track/1t5eOqTAnGRtGBhLQoxFjF)
+	TONIGHT - JPN 2016 WINNER EXIT TOUR IN JAPAN, WINNER
+		(https://open.spotify.com/track/0vIjxPnx7Jvq8Ic8FrBYAy)
+	Okey Dokey - Live, MINO, Lee Seung-hoon
+		(https://open.spotify.com/track/6IU71dwuHsN2gvv1sSqfO8)
+	Nothing's Over - INFINITE EFFECT ADVANCE LIVE Version, INFINITE
+		(https://open.spotify.com/track/0UxiLSlXe8dbtVMVqTzig2)
+	Love Me Right - Live, EXO
+		(https://open.spotify.com/track/3dSklQRCYc5R7watjBtIwo)
+	꿈꾸는 히어로 (Dreaming Hero), SUPER JUNIOR
+		(https://open.spotify.com/track/5b4LllPCWYZb5Es8qN9HoJ)
+	STRONG BABY - 2015 BIGBANG WORLD TOUR [MADE] IN SEOUL VER., V.I
+		(https://open.spotify.com/track/730l2WKqhlvJgKgZ59MwVC)
+	Swing (Korean Ver.), SUPER JUNIOR
+		(https://open.spotify.com/track/6Cj0BWVyuNeB1Nrnajax71)
+
+5 : 651 tracks (7.28%)
+	Never Say Goodbye - Japanese ver., SF9
+		(https://open.spotify.com/track/6O8TjJGhcObeamY2RnFuqA)
+	harukaze good bye again, 2PM
+		(https://open.spotify.com/track/4uLz4b4ifaGzLs2QWZkZ0F)
+	기억을 따라서 (Everlasting) - Korean Ver Studio Ver, TVXQ!
+		(https://open.spotify.com/track/3QfpZMik9vQK8FBI0S8RN2)
+	MY ANSWER, EXO
+		(https://open.spotify.com/track/4EyZwGurgOQNbeiypKzqQf)
+	No Love, 4Minute
+		(https://open.spotify.com/track/0m4VEXpk739T2BJDoYo3cZ)
+	The Way To Me (Intro.), fromis_9
+		(https://open.spotify.com/track/3AjfYXJ8adAmjItk2cMkQf)
+	Universe - CD Version, EXO
+		(https://open.spotify.com/track/1G7u8BpVFWE9p0gTiTH7i6)
+	Memory, Mamamoo
+		(https://open.spotify.com/track/5sOFY7dbJuRLcDiwPbl6Qu)
+	Imagine, CNBLUE
+		(https://open.spotify.com/track/5jVudm1aB66t5mnQSrQPtW)
+	AFTER MOON, TWICE
+		(https://open.spotify.com/track/5Vv5BGWciYgVBg5EXEbMvx)
+	COME BACK HOME - (UNPLUGGED VER.) KR Ver., 2NE1
+		(https://open.spotify.com/track/3svn4H0JlI10GfdKBwjjM4)
+	Follow your dreams, JO KWON, SEO EUN KWANG, LEE CHANGSUB, Lim Hyunsik (BTOB), YOOK SUNGJAE (BTOB)
+		(https://open.spotify.com/track/0gnVn0AcwWxD1kv18u7Tkz)
+	LUV (Ballad Ver.), Apink
+		(https://open.spotify.com/track/5NNIKEoYbg6ZjaWBa0sItc)
+	FOR - JP Ver., WINNER
+		(https://open.spotify.com/track/6exDEAm3nXzo7e1VMl6NlZ)
+	For Life - Live, EXO
+		(https://open.spotify.com/track/673vEFPo4c4YWsw2z0NgSv)
+
+1 : 221 tracks (2.47%)
+	Boom Pow Love, Apink
+		(https://open.spotify.com/track/6mmCzhEzYLdTKNPxemz8w9)
+	IF YOU - BIGBANG JAPAN DOME TOUR 2017 -LAST DANCE- : THE FINAL, BIGBANG
+		(https://open.spotify.com/track/1J7PZwTzzZkmv1SNH6Er26)
+	VIOLET, PENTAGON
+		(https://open.spotify.com/track/4tjhN50TXrT4RGXQCrU437)
+	LOSER - Live, BIGBANG
+		(https://open.spotify.com/track/5YG8m2x8SuWcy21OkFvm7w)
+	Royal Rumble, CNBLUE
+		(https://open.spotify.com/track/1AnmjWYGiHggE205OUwfEb)
+	Come Back Home - Unplugged Version, Live, 2NE1
+		(https://open.spotify.com/track/6PSSCNnAxfN7P0O0AJX3gN)
+	Sing For You - Live, EXO
+		(https://open.spotify.com/track/2wEkvyKrgzEpExzZe3K3of)
+	Don't Go - EXO-CBX“MAGICAL CIRCUS” 2019 -Special Edition-, EXO-CBX
+		(https://open.spotify.com/track/4SfvP7hZn080ettklxOpaV)
+	Ballad Medley:기억을 따라서 Everlasting (Korean Ver.) / I Never Let Go / 약속했던 그때에 (Always There...) / 지금처럼 (Specially), TVXQ!
+		(https://open.spotify.com/track/4YnH2ttPj7HckOToO1GS9C)
+	STAY - Live, BLACKPINK
+		(https://open.spotify.com/track/2m2FYNpmv0zTbrLJytR6N9)
+	Moonlight - Live, EXO
+		(https://open.spotify.com/track/2u3EwlgiwG3DMTaRUL3sdQ)
+	I'M YOUNG - 2016 WINNER EXIT TOUR IN JAPAN, TAEHYUN
+		(https://open.spotify.com/track/6RilcPdjDvL922PMRSJfMm)
+	COLOR RING - WINNER JAPAN TOUR 2019 at MAKUHARI MESSE_2019.7.28, WINNER
+		(https://open.spotify.com/track/4Znvm7OW22COoqr4KFhcb7)
+	ISLAND - 2019 WINNER EVERYWHERE TOUR ENCORE IN SEOUL -KR ver.-, WINNER
+		(https://open.spotify.com/track/4F8FvEJdekz6M1Mycxm0Jy)
+	STAY - Live, BLACKPINK
+		(https://open.spotify.com/track/7ov2yk9ZbtJoOpcd7QoRwd)
+

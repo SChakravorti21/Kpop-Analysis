@@ -2,6 +2,7 @@ import os
 import io
 import sys
 import enum
+import random
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -45,7 +46,7 @@ class ClusterAnalyzer():
             self.features       = FEATURE_KEYS
             self.dataset_name   = "general"
         else:
-            self.tracks         = os.path.join("data", "kpop-track-features.json")
+            self.tracks         = os.path.join("data", "kpop-track-features-lg.json")
             self.features       = FEATURE_KEYS
             self.dataset_name   = "kpop"
 
@@ -68,6 +69,8 @@ class ClusterAnalyzer():
             .read.json(self.tracks, multiLine=True) \
             .withColumn("features", VECTOR_MAPPER(array(*self.features))) \
             .cache()
+
+        print(self.dataset.count())
 
     def analyze_clusters(self):
         if self.dataset_type == DatasetComposition.MIXED_POP_KPOP:
@@ -172,9 +175,9 @@ class ClusterAnalyzer():
 
         # Get track details
         kpop_tracks = self.spark \
-            .read.json(KPOP_TRACKS, multiLine=True) \
+            .read.json(KPOP_TRACKS_LG, multiLine=True) \
             .select(
-                "id", "name", "popularity",
+                "id", "name",
                 col("external_urls.spotify").alias("track-url"),
                 col("artists.name").alias("track-artists")) \
             .join(predictions, "id") \
@@ -194,10 +197,14 @@ class ClusterAnalyzer():
             num_tracks  = cluster["numTracks"]
             rel_size    = num_tracks / total_tracks * 100
 
-            sample_songs = kpop_tracks \
+            # Unfortunately don't have popularity to sort by here
+            songs = kpop_tracks \
                 .filter(col("clusterNum") == cluster_num) \
-                .orderBy(col("popularity").desc()) \
-                .take(5)
+                .collect()
+
+            # Randomly sample songs from this cluster
+            random.seed(SEED)  # seed for reproducibility
+            sample_songs = random.sample(songs, 15)
 
             print(f"{cluster_num:<2}: {num_tracks} tracks ({rel_size:.2f}%)")
 
@@ -315,7 +322,7 @@ if __name__ == "__main__":
         estimator = KMeans
 
     k = int(sys.argv[3]) if len(sys.argv) > 3 else 1
-    analyzer = ClusterAnalyzer(DatasetComposition.ONLY_KPOP, k, estimator)
+    analyzer = ClusterAnalyzer(DatasetComposition.MIXED_POP_KPOP, k, estimator)
 
     if sys.argv[1] == "elbow":
         analyzer.find_elbow()

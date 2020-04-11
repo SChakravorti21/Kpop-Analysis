@@ -8,9 +8,8 @@ from pyspark import StorageLevel
 from pyspark.sql import SparkSession, DataFrame
 
 
-FEATURE_KEYS = ["acousticness", "danceability", "energy", 
-                "instrumentalness", "liveness", "loudness", 
-                "speechiness", "tempo", "valence"]
+FEATURE_KEYS = ["acousticness", "danceability", "energy",
+                "liveness", "speechiness", "valence"]
 
 
 def get_track_df(spark: SparkSession, track_folder: str):
@@ -28,7 +27,7 @@ def write_stats(df: DataFrame, path: str):
 def save_hist(dfs: Dict[str, DataFrame], feature: str):
     bound_min, bound_max = float("inf"), float("-inf")
     genre_series: Dict[str, List[float]] = {}
-    
+
     for genre in dfs:
         feature_df = dfs[genre].select(feature).cache()
 
@@ -47,13 +46,13 @@ def save_hist(dfs: Dict[str, DataFrame], feature: str):
 
     for genre, series in genre_series.items():
         plt.hist(series, bins, alpha=0.5, label=genre)
-    
+
     ax.set_xlabel(f"{feature} value")
     ax.set_ylabel("count")
     plt.title(feature)
     plt.legend(loc='upper right')
 
-    fig_path = os.path.join("analysis", "results", 
+    fig_path = os.path.join("analysis", "results",
                             "charts", f"comp-{feature}.png")
     utils.makedirs(fig_path)
 
@@ -63,7 +62,7 @@ def save_hist(dfs: Dict[str, DataFrame], feature: str):
 
 def main(spark: SparkSession):
     genre_dfs: Dict[str, DataFrame] = {}
-    
+
     for genre in ("kpop", "pop"):
         # Construct a Spark DataFrame out of the tracks for this genre
         track_features = os.path.join("data", f"{genre}-track-features.json")
@@ -71,7 +70,7 @@ def main(spark: SparkSession):
         genre_dfs[genre] = df
 
         # Get a basic overview of track features like liveness, acousticness, etc.
-        stats_path = os.path.join("analysis", "results", 
+        stats_path = os.path.join("analysis", "results",
                                   f"{genre}-overview.json")
         stats = write_stats(df, stats_path)
 
