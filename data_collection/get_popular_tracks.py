@@ -62,6 +62,11 @@ def output_track_features(tracks, output_path, throttle=False):
         if throttle:
             sleep(1.0)
 
+    # Sometimes getting audio features might fail?
+    # In any case, null values make it impossible to load
+    # the dataset
+    all_tracks = [track for track in all_tracks if track != None]
+
     # Originally saved track features in one file per
     # track, but found that it took too long for Spark
     # to go through all the files and parse them into
