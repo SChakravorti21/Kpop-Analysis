@@ -25,7 +25,7 @@ def get_popular_tracks(artists_file: str):
 
     # In addition to all the raw track data, create a version
     # of the data which can easily be skimmed by a human
-    simple_tracks = [(t["name"], t["artists"][0]["name"], t["popularity"]) 
+    simple_tracks = [(t["name"], t["artists"][0]["name"], t["popularity"])
                      for t in all_tracks]
     sorted_tracks = sorted(simple_tracks, reverse=True,
                            key=lambda track: track[2])
@@ -36,7 +36,7 @@ def get_popular_tracks(artists_file: str):
 def get_kpop_tracks(artists_file: str):
     with open(artists_file, "r") as f:
         artists = json.load(f)
-    
+
     # Tracks which songs have already been seen, because
     # very often popular songs are republished in newer albums,
     # but those would add unwanted bias to analyses
@@ -46,16 +46,18 @@ def get_kpop_tracks(artists_file: str):
     for artist in artists:
         print(artist["id"])
         albums = sp.artist_albums(artist["id"], "album,single")
-        
+
         for album in albums["items"]:
             for track in sp.album_tracks(album["id"])["items"]:
                 track_artists = sorted([a["name"] for a in track["artists"]])
                 track_key = (track["name"].lower(), *track_artists)
-                
-                if track_key not in visited_tracks:
+
+                if track_key not in visited_tracks \
+                        and track["id"] not in visited_tracks:
                     # Add the album to the track info, not provided otherwise
                     track["album"] = album
                     visited_tracks.add(track_key)
+                    visited_tracks.add(track["id"])
                     tracks.append(track)
 
         sleep(0.5)
@@ -109,7 +111,7 @@ def kpop_detailed_tracks():
     for group_type in ("kpop-bg", "kpop-gg"):
         artists_file = os.path.join("data", f"{group_type}.json")
         tracks += get_kpop_tracks(artists_file)
-        
+
     utils.write_json(tracks, os.path.join("data", f"kpop-tracks-lg.json"))
 
     # Get the audio features for the tracks we collected

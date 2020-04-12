@@ -67,8 +67,12 @@ class ClusterAnalyzer():
             .master("local[*]") \
             .getOrCreate()
 
+        # Removing songs that are most likely live (i.e. performed
+        # at concerts, tours, etc.) because they only add
+        # noise to our specific analyses
         self.dataset = self.spark \
             .read.json(self.tracks, multiLine=True) \
+            .filter(col("liveness") < 0.70) \
             .withColumn("features", VECTOR_MAPPER(array(*self.features))) \
             .persist(StorageLevel.MEMORY_ONLY) \
 
