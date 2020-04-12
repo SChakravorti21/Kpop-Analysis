@@ -6,6 +6,15 @@ import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 
 
+def euclid_dist(x, y):
+    sum_of_squares = 0
+
+    for xi, yi in zip(x, y):
+        sum_of_squares += ((xi - yi) ** 2)
+
+    return math.sqrt(sum_of_squares)
+
+
 def batches(iterable, batch_size):
     num_batches = math.ceil(len(iterable) / batch_size)
     for i in range(num_batches):

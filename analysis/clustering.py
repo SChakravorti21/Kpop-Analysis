@@ -2,14 +2,16 @@ import os
 import io
 import sys
 import enum
-import random
+import utils
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 import pyspark.sql.functions as F
 from mpl_toolkits.mplot3d import Axes3D
 from typing import Callable, Union
+from pyspark import StorageLevel
 from pyspark.sql import SparkSession, DataFrame
+from pyspark.sql.types import FloatType
 from pyspark.sql.functions import (
     udf, array, lit,
     first, col,
@@ -68,9 +70,7 @@ class ClusterAnalyzer():
         self.dataset = self.spark \
             .read.json(self.tracks, multiLine=True) \
             .withColumn("features", VECTOR_MAPPER(array(*self.features))) \
-            .cache()
-
-        print(self.dataset.count())
+            .persist(StorageLevel.MEMORY_ONLY) \
 
     def analyze_clusters(self):
         if self.dataset_type == DatasetComposition.MIXED_POP_KPOP:
@@ -181,30 +181,40 @@ class ClusterAnalyzer():
                 col("external_urls.spotify").alias("track-url"),
                 col("artists.name").alias("track-artists")) \
             .join(predictions, "id") \
-            .cache()
+            .persist(StorageLevel.MEMORY_ONLY) \
+
+        # Get the cluster centers so we can later get samples which
+        # are representative of the cluster. Consume numpy array
+        # since Spark can't create DataFrame out of it
+        centers = [center.tolist() for center in kmeans_model.clusterCenters()]
+        centers = zip(range(len(centers)), centers)
+        centers = self.spark.createDataFrame(centers, ["clusterNum", "clusterCenter"])
 
         # Show largest clusters first
         cluster_info = predictions \
             .groupBy("clusterNum") \
             .count() \
             .withColumnRenamed("count", "numTracks") \
+            .join(centers, "clusterNum") \
             .orderBy(col("numTracks").desc()) \
             .collect()
 
         # Print size and sample songs for each cluster
         for cluster in cluster_info:
+            center      = cluster["clusterCenter"]
             cluster_num = cluster["clusterNum"]
             num_tracks  = cluster["numTracks"]
             rel_size    = num_tracks / total_tracks * 100
 
-            # Unfortunately don't have popularity to sort by here
-            songs = kpop_tracks \
-                .filter(col("clusterNum") == cluster_num) \
-                .collect()
+            # Going to sort by distance from cluster center
+            # to get the most representative songs
+            sort_func = lambda row: utils.euclid_dist(row, center)
+            sort_func = udf(sort_func, FloatType())
 
-            # Randomly sample songs from this cluster
-            random.seed(SEED)  # seed for reproducibility
-            sample_songs = random.sample(songs, 15)
+            sample_songs = kpop_tracks \
+                .filter(col("clusterNum") == cluster_num) \
+                .orderBy(sort_func("features")) \
+                .take(15)
 
             print(f"{cluster_num:<2}: {num_tracks} tracks ({rel_size:.2f}%)")
 
@@ -322,7 +332,7 @@ if __name__ == "__main__":
         estimator = KMeans
 
     k = int(sys.argv[3]) if len(sys.argv) > 3 else 1
-    analyzer = ClusterAnalyzer(DatasetComposition.MIXED_POP_KPOP, k, estimator)
+    analyzer = ClusterAnalyzer(DatasetComposition.ONLY_KPOP, k, estimator)
 
     if sys.argv[1] == "elbow":
         analyzer.find_elbow()
