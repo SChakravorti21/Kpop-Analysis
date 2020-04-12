@@ -37,6 +37,10 @@ def get_kpop_tracks(artists_file: str):
     with open(artists_file, "r") as f:
         artists = json.load(f)
     
+    # Tracks which songs have already been seen, because
+    # very often popular songs are republished in newer albums,
+    # but those would add unwanted bias to analyses
+    visited_tracks = set()
     tracks = []
 
     for artist in artists:
@@ -44,9 +48,17 @@ def get_kpop_tracks(artists_file: str):
         albums = sp.artist_albums(artist["id"], "album,single")
         
         for album in albums["items"]:
-            tracks += sp.album_tracks(album["id"])["items"]
+            for track in sp.album_tracks(album["id"])["items"]:
+                track_artists = sorted([a["name"] for a in track["artists"]])
+                track_key = (track["name"].lower(), *track_artists)
+                
+                if track_key not in visited_tracks:
+                    # Add the album to the track info, not provided otherwise
+                    track["album"] = album
+                    visited_tracks.add(track_key)
+                    tracks.append(track)
 
-        sleep(1.0)
+        sleep(0.5)
 
     return tracks
 
@@ -56,6 +68,7 @@ def output_track_features(tracks, output_path, throttle=False):
 
     for track_batch in utils.batches(tracks, 50):
         track_ids = [track["id"] for track in track_batch]
+        print(track_ids[0])  # just print something to know stuff is happening
         track_features = sp.audio_features(track_ids)
         all_tracks += track_features
 
