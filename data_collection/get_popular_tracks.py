@@ -105,13 +105,9 @@ def general_popular_tracks():
 
 
 def kpop_detailed_tracks():
-    tracks = []
-
     # Get *all* tracks for each of these artists
-    for group_type in ("kpop-bg", "kpop-gg"):
-        artists_file = os.path.join("data", f"{group_type}.json")
-        tracks += get_kpop_tracks(artists_file)
-
+    artists_file = os.path.join("data", f"kpop-lg.json")
+    tracks = get_kpop_tracks(artists_file)
     utils.write_json(tracks, os.path.join("data", f"kpop-tracks-lg.json"))
 
     # Get the audio features for the tracks we collected

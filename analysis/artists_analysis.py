@@ -34,26 +34,23 @@ class ArtistAnalyzer():
             .withColumn("artist", F.expr("artists[0].name")) \
             .groupBy("artist") \
             .agg(Summarizer.mean(F.col("features")).alias("average_song")) \
-            .select("artist", "average_song") \
-            .collect()
+            .select("artist", "average_song")
 
         # Only keep track of some of the most popular artists,
         # there's way too many to realistically compare all of them
-        """
         dataset = self.spark \
             .read.json(KPOP_ARTISTS, multiLine=True) \
             .withColumnRenamed("name", "artist") \
             .select("artist", "popularity") \
             .join(songs, "artist") \
-            .orderBy(F.col("popularity").desc()) \
             .collect()
-        """
 
-        for row in songs:
+        for row in dataset:
             self._save_radar_plot(
                 row["artist"],
                 # DenseVector -> numpy.ndarray -> List[float]
-                row["average_song"].toArray().tolist()
+                row["average_song"].toArray().tolist(),
+                row["popularity"]
             )
 
     def _generate_dataset(self) -> DataFrame:
@@ -85,7 +82,8 @@ class ArtistAnalyzer():
     def _save_radar_plot(
         self,
         artist: str,
-        song: List[float]
+        song: List[float],
+        popularity: int
     ):
         angles = np.linspace(0, 2 * np.pi, len(song), endpoint=False)
 
@@ -105,7 +103,7 @@ class ArtistAnalyzer():
         # Persist the chart
         output_path = os.path.join(
             "analysis", "results", "artists",
-            f"{artist}.png"
+            f"{popularity}-{artist}.png"
         )
 
         utils.makedirs(output_path)

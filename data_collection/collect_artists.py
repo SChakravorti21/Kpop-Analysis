@@ -49,7 +49,7 @@ def collect_pop_kpop_artists():
 
 
 def collect_many_kpop_artists():
-    artists = collect_artists("k-pop", num_artists=100)
+    artists = collect_artists("k-pop", num_artists=150)
     utils.write_json(artists, GENRE_FILES["k-pop-lg"])
 
 
