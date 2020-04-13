@@ -33,6 +33,8 @@ VECTOR_MAPPER  = udf(lambda row: Vectors.dense(row), VectorUDT())
 POP_TRACKS     = os.path.join("data", "pop-tracks.json")
 KPOP_TRACKS    = os.path.join("data", "kpop-tracks.json")
 KPOP_TRACKS_LG = os.path.join("data", "kpop-tracks-lg.json")
+GEN_FEATURES   = os.path.join("data", "*pop-track-features.json")
+KPOP_FEATURES  = os.path.join("data", "kpop-track-features-lg.json")
 
 
 class DatasetComposition(enum.Enum):
@@ -44,11 +46,11 @@ class ClusterAnalyzer():
     def __init__(self, kind: DatasetComposition, k: int,
                  kmeans_type: Union[KMeans, BisectingKMeans]):
         if kind == DatasetComposition.MIXED_POP_KPOP:
-            self.tracks         = os.path.join("data", "*pop-track-features.json")
+            self.tracks         = GEN_FEATURES
             self.features       = FEATURE_KEYS
             self.dataset_name   = "general"
         else:
-            self.tracks         = os.path.join("data", "kpop-track-features-lg.json")
+            self.tracks         = KPOP_FEATURES
             self.features       = FEATURE_KEYS
             self.dataset_name   = "kpop"
 
