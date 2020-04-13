@@ -54,6 +54,7 @@ class ClusterAnalyzer():
             self.features       = FEATURE_KEYS
             self.dataset_name   = "kpop"
 
+        sns.set()
         self.k = k
         self.dataset_type = kind
         self.kmeans_type  = kmeans_type
@@ -253,7 +254,7 @@ class ClusterAnalyzer():
     def find_elbow(self):
         x, y = [], []
 
-        for iteration, k in enumerate(range(2, 50)):
+        for k in range(2, 50):
             # Define the model, seed should be fixed between iteration
             # to prevent it from being a source of variance
             kmeans = self.kmeans_type(k=k, seed=SEED)
@@ -267,10 +268,13 @@ class ClusterAnalyzer():
             evaluator = ClusteringEvaluator()
             silhouette = evaluator.evaluate(predictions)
 
-            x.append(iteration)
+            x.append(k)
             y.append(silhouette)
 
-        sns.lineplot(x=x, y=y, palette="coolwarm")
+        ax = sns.lineplot(x=x, y=y, palette="coolwarm", marker="o")
+        ax.set_xlabel("Number of Clusters")
+        ax.set_ylabel("Silhouette Score")
+        ax.set_title("Cluster Quality by Number of Clusters")
         plot_name = f"elbow-{self.dataset_name}-{self.kmeans_name}.png"
         plt.savefig(os.path.join("analysis", "results", "charts", plot_name))
 
