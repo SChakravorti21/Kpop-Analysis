@@ -143,11 +143,12 @@ class ClusterAnalyzer():
 
         # Print out what percent of each cluster is pop vs. kpop,
         # plus offer some sample songs for diving a bit deeper
-        print("Cluster #\tPop / %\t\t\tKpop / %")
+        print("Cluster #\tPop / %\t\t\tKpop / %\t\tTotal")
         for cluster in cluster_info:
             clusterNum  = cluster["clusterNum"]
             pop         = cluster["pop"]
             kpop        = cluster["kpop"]
+            total       = cluster["total"]
             perc_pop    = cluster["perc-pop"]
             perc_kpop   = cluster["perc-kpop"]
 
@@ -155,19 +156,21 @@ class ClusterAnalyzer():
             pop_songs  = pop_subset \
                 .filter(col("clusterNum")  == clusterNum) \
                 .orderBy(col("popularity").desc()) \
-                .take(3)
+                .take(5)
             kpop_songs = kpop_subset \
                 .filter(col("clusterNum")  == clusterNum) \
                 .orderBy(col("popularity").desc()) \
-                .take(3)
+                .take(5)
 
-            print(f"{clusterNum:<2}\t\t\t{pop:<2} / {perc_pop:.2f}%\t\t{kpop:<2} / {perc_kpop:.2f}%")
+            pop_details = f"{pop:<2} / {perc_pop:.2f}%"
+            kpop_details = f"{kpop:<2} / {perc_kpop:.2f}%"
+            print(f"{clusterNum:<2}\t\t\t{pop_details}\t\t{kpop_details}\t{total:.0f}")
 
             for song in pop_songs:
-                print(f"\tPop:  {song['name']}, {', '.join(song['track-artists'])}\n\t\t({song['track-url']})")
+                print(f"\tPop:  {song['name']}, {', '.join(song['track-artists'])}\n\t\t{song['track-url']}")
 
             for song in kpop_songs:
-                print(f"\tKpop: {song['name']}, {', '.join(song['track-artists'])}\n\t\t({song['track-url']})")
+                print(f"\tKpop: {song['name']}, {', '.join(song['track-artists'])}\n\t\t{song['track-url']}")
 
             print()
 

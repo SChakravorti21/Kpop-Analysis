@@ -10,9 +10,10 @@ from pyspark.sql import SparkSession, DataFrame
 from pyspark.sql.functions import udf, array
 from pyspark.ml.linalg import Vectors, VectorUDT, DenseMatrix
 from pyspark.ml.stat import Correlation
-from analysis_prelim import FEATURE_KEYS
 
-
+FEATURE_KEYS   = ["acousticness", "danceability", "energy",
+                  "liveness", "speechiness", "valence",
+                  "instrumentalness", "tempo", "loudness"]
 TRACK_FEATURES = os.path.join("data", "*pop-track-features.json")
 
 
@@ -20,7 +21,7 @@ def save_corr_heatmap(corr: DenseMatrix, columns: List[str],
                       path: str, title="Correlation Matrix"):
     rows = corr.toArray().tolist()
     df = pd.DataFrame(rows)
-    fig = plt.figure(figsize=(14, 10))
+    fig = plt.figure(figsize=(13, 8))
     sns.heatmap(df, xticklabels=columns, yticklabels=columns, annot=True)
     plt.title(title)
     plt.savefig(path)
@@ -52,11 +53,11 @@ def loudness_energy_corr(spark: SparkSession):
     x = [pair["loudness"] for pair in pairs]
     y = [pair["energy"]   for pair in pairs]
 
-    plt.figure(figsize=(16, 12))
+    plt.figure(figsize=(14, 10))
     plt.scatter(x, y, marker='o', alpha=0.5)
-    plt.xlabel("loudness")
-    plt.ylabel("energy")
-    plt.title("Comparing loudness to energy")
+    plt.xlabel("Loudness (dB)")
+    plt.ylabel("Energy")
+    plt.title("Comparing Loudness to Energy")
     plt.savefig(plot_path)
     plt.close()
 
@@ -70,10 +71,8 @@ if __name__ == "__main__":
     
     loudness_energy_corr(spark)
 
-    for genre in ("kpop", "pop"):
-        features_file = os.path.join("data", f"{genre}-track-features.json")
-        _, corr = find_correlation(spark, FEATURE_KEYS, features_file)
-        corr_path = os.path.join("analysis", "results", 
-                                 "charts", f"corr-all-{genre}.png")
-        save_corr_heatmap(corr, FEATURE_KEYS, corr_path,
-                          title=f"{genre.capitalize()} Correlation Matrix")
+    _, corr = find_correlation(spark, FEATURE_KEYS)
+    corr_path = os.path.join("analysis", "results", 
+                             "charts", f"correlation.png")
+    save_corr_heatmap(corr, FEATURE_KEYS, corr_path,
+                      title=f"Features Correlation Matrix")

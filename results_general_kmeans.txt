@@ -10,129 +10,202 @@
 8	0.111989	0.684320	0.855118	0.249446	0.104649	0.725325
  
 
-Cluster #	Pop / %			Kpop / %
-6 			37 / 25.34%		109 / 74.66%
+Cluster #	Pop / %			Kpop / %		Total
+6 			37 / 25.34%		109 / 74.66%	146
 	Pop:  ROXANNE, Arizona Zervas
-		(https://open.spotify.com/track/696DnlkuDOXcMAnKlTgXXK)
+		https://open.spotify.com/track/696DnlkuDOXcMAnKlTgXXK
 	Pop:  Watermelon Sugar, Harry Styles
-		(https://open.spotify.com/track/6UelLqGlWMcVH1E5c4H7lY)
+		https://open.spotify.com/track/6UelLqGlWMcVH1E5c4H7lY
 	Pop:  Promises (with Sam Smith), Calvin Harris, Sam Smith, Jessie Reyez
-		(https://open.spotify.com/track/5N5k9nd479b1xpDZ4usjrg)
+		https://open.spotify.com/track/5N5k9nd479b1xpDZ4usjrg
+	Pop:  no tears left to cry, Ariana Grande
+		https://open.spotify.com/track/2qT1uLXPVPzGgFOx4jtEuo
+	Pop:  Let You Down, NF
+		https://open.spotify.com/track/52okn5MNA47tk87PeZJLEL
 	Kpop: ON, BTS
-		(https://open.spotify.com/track/2QyuXBcV1LJ2rq01KhreMF)
+		https://open.spotify.com/track/2QyuXBcV1LJ2rq01KhreMF
 	Kpop: ON (Feat. Sia), BTS, Sia
-		(https://open.spotify.com/track/3IB5qOeMayvpOdHxYCL5tZ)
+		https://open.spotify.com/track/3IB5qOeMayvpOdHxYCL5tZ
 	Kpop: UGH!, BTS
-		(https://open.spotify.com/track/1aKuG1GG76xPLUkjBbQo3W)
+		https://open.spotify.com/track/1aKuG1GG76xPLUkjBbQo3W
+	Kpop: Black Swan, BTS
+		https://open.spotify.com/track/3bkkMZEAhx7rTVz1C0itRQ
+	Kpop: DUN DUN, EVERGLOW
+		https://open.spotify.com/track/3CyCjgTHFzqucmECajq8QA
 
-8 			46 / 26.29%		129 / 73.71%
+8 			46 / 26.59%		127 / 73.41%	173
 	Pop:  Physical, Dua Lipa
-		(https://open.spotify.com/track/5px6upUHM3fhOP621Edp4V)
+		https://open.spotify.com/track/5px6upUHM3fhOP621Edp4V
 	Pop:  Stupid Love, Lady Gaga
-		(https://open.spotify.com/track/2kJu14V7hbZw3I4K8L8SXb)
+		https://open.spotify.com/track/2kJu14V7hbZw3I4K8L8SXb
+	Pop:  Adicto (with Anuel AA & Ozuna), Tainy, Anuel AA, Ozuna
+		https://open.spotify.com/track/3jbT1Y5MoPwEIpZndDDwVq
 	Pop:  Boss Bitch, Doja Cat
-		(https://open.spotify.com/track/78qd8dvwea0Gosb6Fe6j3k)
+		https://open.spotify.com/track/78qd8dvwea0Gosb6Fe6j3k
+	Pop:  Quizas, Rich Music LTD, Sech, Dalex, Justin Quiles, Lenny Tavárez, Feid, Wisin, Zion
+		https://open.spotify.com/track/5Id5B3dxJZhPcV9GzgYZZe
 	Kpop: Boy With Luv (feat. Halsey), BTS, Halsey
-		(https://open.spotify.com/track/5KawlOMHjWeUjQtnuRs22c)
+		https://open.spotify.com/track/5KawlOMHjWeUjQtnuRs22c
 	Kpop: Boy With Luv (feat. Halsey), BTS, Halsey
-		(https://open.spotify.com/track/5KawlOMHjWeUjQtnuRs22c)
+		https://open.spotify.com/track/5KawlOMHjWeUjQtnuRs22c
 	Kpop: WANNABE, ITZY
-		(https://open.spotify.com/track/6tCssnvTUREcperDOUTqvA)
+		https://open.spotify.com/track/6tCssnvTUREcperDOUTqvA
+	Kpop: Kiss and Make Up, Dua Lipa, BLACKPINK
+		https://open.spotify.com/track/7jr3iPu4O4bTCVwLMbdU2i
+	Kpop: Kiss and Make Up, Dua Lipa, BLACKPINK
+		https://open.spotify.com/track/7jr3iPu4O4bTCVwLMbdU2i
 
-4 			136 / 72.73%		51 / 27.27%
+4 			136 / 72.73%		51 / 27.27%	187
 	Pop:  Life Is Good (feat. Drake), Future, Drake
-		(https://open.spotify.com/track/5yY9lUy8nbvjM1Uyo1Uqoc)
+		https://open.spotify.com/track/5yY9lUy8nbvjM1Uyo1Uqoc
 	Pop:  bad guy, Billie Eilish
-		(https://open.spotify.com/track/2Fxmhks0bxGSBdJ92vM42m)
+		https://open.spotify.com/track/2Fxmhks0bxGSBdJ92vM42m
 	Pop:  My Oh My (feat. DaBaby), Camila Cabello, DaBaby
-		(https://open.spotify.com/track/3yOlyBJuViE2YSGn3nVE1K)
+		https://open.spotify.com/track/3yOlyBJuViE2YSGn3nVE1K
+	Pop:  You should be sad, Halsey
+		https://open.spotify.com/track/7lidXGPXPYLNThITAOTlkK
+	Pop:  10,000 Hours (with Justin Bieber), Dan + Shay, Justin Bieber
+		https://open.spotify.com/track/2wrJq5XKLnmhRXHIAf9xBa
 	Kpop: Psycho, Red Velvet
-		(https://open.spotify.com/track/3CYH422oy1cZNoo0GTG1TK)
+		https://open.spotify.com/track/3CYH422oy1cZNoo0GTG1TK
 	Kpop: 00:00 (Zero O’Clock), BTS
-		(https://open.spotify.com/track/4AlihYDqxXshKhvh5tnMfP)
+		https://open.spotify.com/track/4AlihYDqxXshKhvh5tnMfP
 	Kpop: Louder than bombs, BTS
-		(https://open.spotify.com/track/3op7HNwLli54MBjFGzIlZO)
+		https://open.spotify.com/track/3op7HNwLli54MBjFGzIlZO
+	Kpop: You Calling My Name, GOT7
+		https://open.spotify.com/track/6f4wghlwYWGLqGEIKc6HDQ
+	Kpop: Love Shot, EXO
+		https://open.spotify.com/track/0yB4jrSwN0bFtFRDR5vyMj
 
-0 			40 / 66.67%		20 / 33.33%
+0 			40 / 66.67%		20 / 33.33%	60
 	Pop:  7 rings, Ariana Grande
-		(https://open.spotify.com/track/6ocbgoVGwYJhOv1GgI9NsF)
+		https://open.spotify.com/track/6ocbgoVGwYJhOv1GgI9NsF
 	Pop:  Shallow, Lady Gaga, Bradley Cooper
-		(https://open.spotify.com/track/2VxeLyX666F8uXCJ0dZF8B)
+		https://open.spotify.com/track/2VxeLyX666F8uXCJ0dZF8B
+	Pop:  Perfect, Ed Sheeran
+		https://open.spotify.com/track/0tgVpDi06FyKpA1z0VMD4v
 	Pop:  Dancing With A Stranger (with Normani), Sam Smith, Normani
-		(https://open.spotify.com/track/6Qs4SXO9dwPj5GKvVOv8Ki)
+		https://open.spotify.com/track/6Qs4SXO9dwPj5GKvVOv8Ki
+	Pop:  Lover, Taylor Swift
+		https://open.spotify.com/track/1dGr1c8CrMLDpV6mPbImSI
 	Kpop: STAY, BLACKPINK
-		(https://open.spotify.com/track/4TWHREp4wv0TmewqR6rgRd)
+		https://open.spotify.com/track/4TWHREp4wv0TmewqR6rgRd
 	Kpop: Airplane, j-hope
-		(https://open.spotify.com/track/6gALSAMuXm5du6TuKGj6o7)
+		https://open.spotify.com/track/6gALSAMuXm5du6TuKGj6o7
+	Kpop: All I Wanna Do (feat. Hoody & 로꼬 Loco) [Korean Version], Jay Park, Hoody, Loco
+		https://open.spotify.com/track/2c37Gkpu75l3kvh1FUZrHV
 	Kpop: Fine, TAEYEON
-		(https://open.spotify.com/track/6CdUgvL597jWmW4w8P5kHs)
+		https://open.spotify.com/track/6CdUgvL597jWmW4w8P5kHs
+	Kpop: Perhaps Love, Eric Nam, CHEEZE
+		https://open.spotify.com/track/7Mfb2IwRNP8Qi7Ojtpmi37
 
-3 			19 / 59.38%		13 / 40.62%
+3 			19 / 59.38%		13 / 40.62%	32
 	Pop:  Memories, Maroon 5
-		(https://open.spotify.com/track/2b8fOow8UzyDFAE27YhOZM)
+		https://open.spotify.com/track/2b8fOow8UzyDFAE27YhOZM
 	Pop:  Someone You Loved, Lewis Capaldi
-		(https://open.spotify.com/track/7qEHsqek33rTcFNT9PFqLf)
+		https://open.spotify.com/track/7qEHsqek33rTcFNT9PFqLf
 	Pop:  If the World Was Ending - feat. Julia Michaels, JP Saxe, Julia Michaels
-		(https://open.spotify.com/track/2kJwzbxV2ppxnQoYw4GLBZ)
-	Kpop: I Love You 3000 II, 88rising, Stephanie Poetri, Jackson Wang
-		(https://open.spotify.com/track/3witRpHWHqArlnt6GTlH2Y)
+		https://open.spotify.com/track/2kJwzbxV2ppxnQoYw4GLBZ
+	Pop:  bury a friend, Billie Eilish
+		https://open.spotify.com/track/4SSnFejRGlZikf02HLewEF
+	Pop:  Bruises, Lewis Capaldi
+		https://open.spotify.com/track/4Of7rzpRpV1mWRbhp5rAqG
 	Kpop: All about you, TAEYEON
-		(https://open.spotify.com/track/7fftC401ke4BzA3ucPIXES)
+		https://open.spotify.com/track/7fftC401ke4BzA3ucPIXES
+	Kpop: I Love You 3000 II, 88rising, Stephanie Poetri, Jackson Wang
+		https://open.spotify.com/track/3witRpHWHqArlnt6GTlH2Y
 	Kpop: 11:11, TAEYEON
-		(https://open.spotify.com/track/67QGnT1Vdfuuy4HkLTUVjj)
+		https://open.spotify.com/track/67QGnT1Vdfuuy4HkLTUVjj
+	Kpop: To My Youth, Bolbbalgan4
+		https://open.spotify.com/track/3MkYUoEo1Yk1peHN4cof0c
+	Kpop: Lay Your Head on Me, Crush, Garibay
+		https://open.spotify.com/track/1EmkjyCz5BoYwhuDmLVFh4
 
-2 			32 / 57.14%		24 / 42.86%
+2 			32 / 58.18%		23 / 41.82%	55
 	Pop:  everything i wanted, Billie Eilish
-		(https://open.spotify.com/track/3ZCTVFBt2Brf31RLEnCkWJ)
+		https://open.spotify.com/track/3ZCTVFBt2Brf31RLEnCkWJ
 	Pop:  No Time To Die, Billie Eilish
-		(https://open.spotify.com/track/73SpzrcaHk0RQPFP73vqVR)
+		https://open.spotify.com/track/73SpzrcaHk0RQPFP73vqVR
 	Pop:  lovely (with Khalid), Billie Eilish, Khalid
-		(https://open.spotify.com/track/0u2P5u6lvoDfwTYjAADbn4)
+		https://open.spotify.com/track/0u2P5u6lvoDfwTYjAADbn4
+	Pop:  when the party's over, Billie Eilish
+		https://open.spotify.com/track/43zdsphuZLzwA9k4DJhU0I
+	Pop:  Lose You To Love Me, Selena Gomez
+		https://open.spotify.com/track/4l0Mvzj72xxOpRrp6h8nHi
 	Kpop: Who (feat. BTS), Lauv, BTS
-		(https://open.spotify.com/track/2qG81jL9UIP54uS8gYyP4k)
+		https://open.spotify.com/track/2qG81jL9UIP54uS8gYyP4k
 	Kpop: Who (feat. BTS), Lauv, BTS
-		(https://open.spotify.com/track/2qG81jL9UIP54uS8gYyP4k)
+		https://open.spotify.com/track/2qG81jL9UIP54uS8gYyP4k
 	Kpop: Give You My Heart, IU
-		(https://open.spotify.com/track/6dGsBRuavumBs5BghcXF3D)
+		https://open.spotify.com/track/6dGsBRuavumBs5BghcXF3D
+	Kpop: Beautiful, Crush
+		https://open.spotify.com/track/6mzF8HvHdVrzJNd8M1uFCS
+	Kpop: Let Us Go, Crush
+		https://open.spotify.com/track/2y3Z9MQdgoENX8FtIVI40H
 
-5 			30 / 44.78%		37 / 55.22%
+5 			30 / 44.78%		37 / 55.22%	67
 	Pop:  How Do You Sleep?, Sam Smith
-		(https://open.spotify.com/track/6b2RcmUt1g9N9mQ3CbjX2Y)
+		https://open.spotify.com/track/6b2RcmUt1g9N9mQ3CbjX2Y
 	Pop:  Lights Up, Harry Styles
-		(https://open.spotify.com/track/4jAIqgrPjKLTY9Gbez25Qb)
+		https://open.spotify.com/track/4jAIqgrPjKLTY9Gbez25Qb
 	Pop:  Swervin (feat. 6ix9ine), A Boogie Wit da Hoodie, 6ix9ine
-		(https://open.spotify.com/track/1wJRveJZLSb1rjhnUHQiv6)
+		https://open.spotify.com/track/1wJRveJZLSb1rjhnUHQiv6
+	Pop:  Youngblood, 5 Seconds of Summer
+		https://open.spotify.com/track/2iUXsYOEPhVqEBwsqP70rE
+	Pop:  Love On The Brain, Rihanna
+		https://open.spotify.com/track/5oO3drDxtziYU2H1X23ZIp
 	Kpop: POP/STARS, K/DA, Madison Beer, (G)I-DLE, Jaira Burns, League of Legends
-		(https://open.spotify.com/track/5sbooPcNgIE22DwO0VNGUJ)
+		https://open.spotify.com/track/5sbooPcNgIE22DwO0VNGUJ
 	Kpop: instagram, DEAN
-		(https://open.spotify.com/track/6z1kLsntE7FuzKZHZWrXYN)
+		https://open.spotify.com/track/6z1kLsntE7FuzKZHZWrXYN
 	Kpop: Crossroads, GFRIEND
-		(https://open.spotify.com/track/3ZWCWArPYr1v0iF763oSOz)
+		https://open.spotify.com/track/3ZWCWArPYr1v0iF763oSOz
+	Kpop: 예뻤어 You Were Beautiful, DAY6
+		https://open.spotify.com/track/71WZ7yFuwxmQz5jJUpvkGv
+	Kpop: HALA HALA (Hearts Awakened, Live Alive), ATEEZ
+		https://open.spotify.com/track/4v2BLMhWtVvBnZwuoiKxja
 
-1 			28 / 54.90%		23 / 45.10%
+1 			28 / 54.90%		23 / 45.10%	51
 	Pop:  Forever (feat. Post Malone & Clever), Justin Bieber, Post Malone, Clever
-		(https://open.spotify.com/track/2ZlCGeK30BLRNSPC832pNZ)
+		https://open.spotify.com/track/2ZlCGeK30BLRNSPC832pNZ
 	Pop:  Yummy, Justin Bieber
-		(https://open.spotify.com/track/16wAOAZ2OkqoIDN7TpChjR)
+		https://open.spotify.com/track/16wAOAZ2OkqoIDN7TpChjR
 	Pop:  Definitivamente, Daddy Yankee, Sech
-		(https://open.spotify.com/track/113PlnpZbHd3WIqeYjhZWv)
+		https://open.spotify.com/track/113PlnpZbHd3WIqeYjhZWv
+	Pop:  Numbers (feat. Roddy Ricch, Gunna and London On Da Track), A Boogie Wit da Hoodie, London On Da Track, Roddy Ricch, Gunna
+		https://open.spotify.com/track/733c1CWmIGymoQXdp7Us88
+	Pop:  I'm Not The Only One, Sam Smith
+		https://open.spotify.com/track/7795WJLVKJoAyVoOtCWqXN
 	Kpop: Starry Night, Mamamoo
-		(https://open.spotify.com/track/5MaDeMdqsPsZTxNWdEZPVH)
-	Kpop: Home, SEVENTEEN
-		(https://open.spotify.com/track/5TyCTVsBsHeeutZcU2uP5s)
+		https://open.spotify.com/track/5MaDeMdqsPsZTxNWdEZPVH
 	Kpop: Don’t, Loco, Hwa Sa
-		(https://open.spotify.com/track/6KyafpXji3NKMmlmSokT9Y)
+		https://open.spotify.com/track/6KyafpXji3NKMmlmSokT9Y
+	Kpop: Home, SEVENTEEN
+		https://open.spotify.com/track/5TyCTVsBsHeeutZcU2uP5s
+	Kpop: Galaxy 우주를 줄게, Bolbbalgan4
+		https://open.spotify.com/track/6T3Mlx5fr71sm0u1YDAb4R
+	Kpop: Wind flower, Mamamoo
+		https://open.spotify.com/track/2qwyjoSsSr3M7HTt611Q5O
 
-7 			91 / 52.30%		83 / 47.70%
+7 			91 / 52.30%		83 / 47.70%	174
 	Pop:  Don't Start Now, Dua Lipa
-		(https://open.spotify.com/track/6WrI0LAC5M1Rw2MnX2ZvEg)
+		https://open.spotify.com/track/6WrI0LAC5M1Rw2MnX2ZvEg
 	Pop:  Tusa, KAROL G, Nicki Minaj
-		(https://open.spotify.com/track/7k4t7uLgtOxPwTpFmtJNTY)
+		https://open.spotify.com/track/7k4t7uLgtOxPwTpFmtJNTY
 	Pop:  Say So, Doja Cat
-		(https://open.spotify.com/track/3Dv1eDb0MEgF93GpLXlucZ)
+		https://open.spotify.com/track/3Dv1eDb0MEgF93GpLXlucZ
+	Pop:  Sigues Con El, Dimelo Flow, Arcangel, Sech
+		https://open.spotify.com/track/7sQKy5vlPQllr0k9IjYJv3
+	Pop:  hot girl bummer, blackbear
+		https://open.spotify.com/track/7aiClxsDWFRQ0Kzk5KI5ku
 	Kpop: Filter, BTS
-		(https://open.spotify.com/track/0ono6UCNVZ1XqOm6j78Blu)
+		https://open.spotify.com/track/0ono6UCNVZ1XqOm6j78Blu
 	Kpop: My Time, BTS
-		(https://open.spotify.com/track/4vTgx6h4seHvkuFh84JXYP)
+		https://open.spotify.com/track/4vTgx6h4seHvkuFh84JXYP
 	Kpop: Any song, ZICO
-		(https://open.spotify.com/track/1iIhGHzzrzqQfuNkFI2qAn)
+		https://open.spotify.com/track/1iIhGHzzrzqQfuNkFI2qAn
+	Kpop: HIP, Mamamoo
+		https://open.spotify.com/track/24nK8tW7Pt3Inh2utttuoG
+	Kpop: LOVE SCENARIO, iKON
+		https://open.spotify.com/track/6qAzAmPBUpGrk7XADZHR5k
+

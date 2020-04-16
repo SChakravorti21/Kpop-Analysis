@@ -31,7 +31,7 @@ class ArtistAnalyzer():
         # We need to use a `Summarizer` to be able to take
         # the average of a Vector-type column
         songs = self._generate_dataset() \
-            .withColumn("artist", F.expr("artists[0].name")) \
+            .withColumn("artist", F.explode("artists.name")) \
             .groupBy("artist") \
             .agg(Summarizer.mean(F.col("features")).alias("average_song")) \
             .select("artist", "average_song")

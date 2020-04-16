@@ -7,6 +7,10 @@ from typing import List, Dict
 from pyspark import StorageLevel
 from pyspark.sql import SparkSession, DataFrame
 
+ALL_FEATURES = ["acousticness", "danceability", "energy",
+                "liveness", "speechiness", "valence",
+                "key", "mode", "time_signature", 
+                "instrumentalness", "tempo", "loudness"]
 
 FEATURE_KEYS = ["acousticness", "danceability", "energy",
                 "liveness", "speechiness", "valence"]
@@ -19,7 +23,7 @@ def get_track_df(spark: SparkSession, track_folder: str):
 
 
 def write_stats(df: DataFrame, path: str):
-    desc = df.describe(FEATURE_KEYS).collect()
+    desc = df.describe(ALL_FEATURES).collect()
     desc_json = [row.asDict() for row in desc]
     utils.write_json(desc_json, path)
 
@@ -47,9 +51,10 @@ def save_hist(dfs: Dict[str, DataFrame], feature: str):
     for genre, series in genre_series.items():
         plt.hist(series, bins, alpha=0.5, label=genre)
 
-    ax.set_xlabel(f"{feature} value")
-    ax.set_ylabel("count")
-    plt.title(feature)
+    feature_label = " ".join(word.capitalize() for word in feature.split("_"))
+    ax.set_xlabel(f"{feature_label} Value")
+    ax.set_ylabel("Count per bin")
+    plt.title(f"{feature_label} by Genre")
     plt.legend(loc='upper right')
 
     fig_path = os.path.join("analysis", "results",
@@ -74,11 +79,13 @@ def main(spark: SparkSession):
                                   f"{genre}-overview.json")
         stats = write_stats(df, stats_path)
 
-    for feature in FEATURE_KEYS:
+    for feature in ALL_FEATURES:
         save_hist(genre_dfs, feature)
 
 
 if __name__ == "__main__":
+    plt.rcParams.update({ "font.size": 25 })
+
     main(SparkSession
             .builder
             .master("local")
