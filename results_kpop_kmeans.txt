@@ -1,333 +1,333 @@
 	acousticness	danceability	energy	liveness	speechiness	valence
-0	0.079360	0.714274	0.852692	0.103554	0.085510	0.810092
-1	0.063411	0.528571	0.859373	0.451836	0.115180	0.308724
-2	0.378281	0.707748	0.751487	0.149934	0.075794	0.706843
-3	0.074295	0.670076	0.811917	0.108804	0.081965	0.544317
-4	0.082161	0.576048	0.703172	0.139824	0.066691	0.283736
-5	0.434588	0.570078	0.644787	0.206362	0.057593	0.370323
-6	0.748707	0.509118	0.413271	0.177036	0.047575	0.312885
-7	0.094521	0.705468	0.880289	0.330882	0.084377	0.811964
-8	0.181327	0.628684	0.841166	0.580267	0.093310	0.601692
-9	0.077095	0.618148	0.860350	0.316096	0.088853	0.559995
+0	0.803567	0.436740	0.332654	0.156555	0.043985	0.191572
+1	0.811147	0.609440	0.368113	0.151279	0.067552	0.405040
+2	0.380133	0.534152	0.522546	0.165295	0.055631	0.238805
+3	0.579430	0.649603	0.586546	0.178092	0.083291	0.517098
+4	0.078026	0.600409	0.682960	0.143280	0.074979	0.259092
+5	0.114120	0.652264	0.761802	0.126654	0.089770	0.470454
+6	0.099994	0.589205	0.836799	0.413524	0.105381	0.433451
+7	0.067566	0.717020	0.834794	0.108974	0.093879	0.747463
+8	0.083762	0.693244	0.870990	0.354937	0.097858	0.758200
+9	0.318869	0.722854	0.731232	0.164731	0.101071	0.727898
  
 
-0 : 1013 tracks (17.87%)
+7 : 1613 tracks (19.72%)
+	LOVE ME LOVE ME, WINNER
+		(https://open.spotify.com/track/5hlqtwCuRf3QchUjjw9iua)
+	NEW YORK, Mamamoo
+		(https://open.spotify.com/track/3oJPTHDd6vtTMWakbarxJB)
 	Dance The Night Away, TWICE
 		(https://open.spotify.com/track/3t723PlEADna6GjgquoMRW)
-	Lucky, SEVENTEEN
-		(https://open.spotify.com/track/4U1tSjwx6FjV27EcXCE9d3)
-	Girl's Talk (이브, 츄), LOONA
-		(https://open.spotify.com/track/1j3zXAq0W9cLIpiAXwcYXF)
-	OK!, AOA
-		(https://open.spotify.com/track/6sDGn7obP2FTaUzVgiZYhm)
-	Master, TVXQ!
-		(https://open.spotify.com/track/1PPRoQwORvgfM7e40zeORB)
-	Gorgeous, VAV
-		(https://open.spotify.com/track/1IvS2WRu87NUk8In1R1iuW)
+	You Know, 4Minute
+		(https://open.spotify.com/track/3uwEZbvdy8ZqVZxfa9u6WA)
+	Checkmate, OH MY GIRL
+		(https://open.spotify.com/track/6l5z9aMsWTNQf0Ki6uf82p)
+	LOVE ME LOVE ME - KR Ver., WINNER
+		(https://open.spotify.com/track/60nFMzv7ZOn5px6aTcjHAc)
+	LOVE ME LOVE ME - JP Ver., WINNER
+		(https://open.spotify.com/track/00wtmY7mMRjwIWlrV3fPA4)
 	Baby, EXO
 		(https://open.spotify.com/track/3pnvvqhkOYq0kTgLaT4BCA)
-	Step By Me, f(x)
-		(https://open.spotify.com/track/1Yl45y88rNhnBcHQgVXdS2)
-	Karma Butterfly, Girls' Generation
-		(https://open.spotify.com/track/6tBTi4QzcA5xvkN9r4Ylp5)
-	Cash Me Out, f(x)
-		(https://open.spotify.com/track/6KmaTvFBNvM5ZVUHxP1Sr9)
-	Dangerous, 2PM
-		(https://open.spotify.com/track/58jhgV2nPf09R9VxVvY4Ge)
-	EXODUS, EXO
-		(https://open.spotify.com/track/4mmAVvI9SaJNLaNNeWAbX0)
-	Glitter, f(x)
-		(https://open.spotify.com/track/1EGdM21CGLJ39W60U3VUO7)
-	CHANGE, CNBLUE
-		(https://open.spotify.com/track/5MWjz24KZRlypmio8EgD0g)
-	Slender Man, 2PM
-		(https://open.spotify.com/track/2KFm5glMFYM7ogfcr324zm)
+	SMILE AGAIN, WINNER
+		(https://open.spotify.com/track/6c1KHiGrbQrDR0NPjo43uY)
+	DDD, EXID
+		(https://open.spotify.com/track/3nXUfNbkv8ikaSdHwEp0oY)
+	EVERYDAY - REMIX, WINNER
+		(https://open.spotify.com/track/14F65fKDbhbpd6iNsZqy5R)
+	EVERYDAY - REMIX JP Ver., WINNER
+		(https://open.spotify.com/track/3tlvbWA15wr8bHRVQMQ06c)
+	CREAM [JAPANESE VERSION], EXID
+		(https://open.spotify.com/track/2MevZR0biSlUcPFqHNtrnr)
+	CREAM - JAPANESE VERSION, EXID
+		(https://open.spotify.com/track/4u5kxQqmFNoEGviKgSRPn7)
+	SHADOW, SF9
+		(https://open.spotify.com/track/5jOcg92lKDdBl4UMw2ygcJ)
 
-3 : 985 tracks (17.37%)
-	Scold, SF9
-		(https://open.spotify.com/track/5VPyBvAxLHHEjNXVVT8agc)
-	Man In Love - Ava1anche Remix, INFINITE, Ava1anche
-		(https://open.spotify.com/track/4tDVLLeXAXo8ADy4b4xRAz)
-	Carry on, Monsta X
-		(https://open.spotify.com/track/0QOLYRdOahFvQkWJkrm1eQ)
-	One Love, Wanna One
-		(https://open.spotify.com/track/75QZUOxU114kwK5Bf0YyjM)
-	Outro: Do You Think It Makes Sense?, BTS
-		(https://open.spotify.com/track/546EsdBQHls80pdlcde8EH)
-	Promise me, Apink
-		(https://open.spotify.com/track/1bWhTbzeoCOqDEuF5Utp1G)
-	Nanananamida, NU'EST
-		(https://open.spotify.com/track/3s0R32RLmGDGgodudUulDt)
+5 : 1102 tracks (13.47%)
+	Love Again, Hoody
+		(https://open.spotify.com/track/56tPY6ReMHOPnsZtzVo4ai)
+	Unlimited, SF9
+		(https://open.spotify.com/track/7jWllhiSkXsuQeeXmiGsfY)
+	Rewind (Feat. SUMIN), Loco
+		(https://open.spotify.com/track/30oZ161npcglwox5PhHiys)
+	Blue Moon, BTOB
+		(https://open.spotify.com/track/0RoitHrLipAK9ENOvf7e1j)
+	Crystal Snow, BTS
+		(https://open.spotify.com/track/6NbfFVZ01Ttvvqmcok8DxL)
+	Black Swan, BTS
+		(https://open.spotify.com/track/6XvR5NoPn6hAQ4XvJW18Z9)
+	Digital Lover (Jessi ver.), Jessi
+		(https://open.spotify.com/track/6AhrjgMDFMFaHWV439ZXHT)
+	Find Me, TAEYEON
+		(https://open.spotify.com/track/71UON3eyYef8AB9gNWXcXM)
+	초록비 Green Rain, SHINee
+		(https://open.spotify.com/track/5obZuQ3tc1RnkCEkibV53i)
 	UGLY, 2NE1
 		(https://open.spotify.com/track/2OxINyqTtAuKmLE6Ki219o)
-	BABY, The Rose
-		(https://open.spotify.com/track/1WvAdtjJOBv0pAR5yKr2ov)
-	Kick It, NCT 127
-		(https://open.spotify.com/track/1ayaOin9hxCtyhg4UsBTpg)
-	Be My Baby - Ra.D Mix, Wonder Girls
-		(https://open.spotify.com/track/2Oq6cOsyZhF3IuKe84t20k)
-	12시 25분 (Wish List), f(x)
-		(https://open.spotify.com/track/27xDMgcbyVQsvSqQiD1bD1)
-	Give me more (Un Poco Mas) (feat. De La Ghetto & Play-N-Skillz), VAV, De La Ghetto, Play-N-Skillz
-		(https://open.spotify.com/track/15xygfce56PeXzL34nI0YW)
-	Lovefool, N.Flying
-		(https://open.spotify.com/track/0qegZpBSpcjuzLCFpIAn5H)
-	Perfect!, WJSN
-		(https://open.spotify.com/track/5hQlgQGszMcENcgc8klmzM)
+	Sunrise - Atmospheric Mix by SPACECOWBOY, ATEEZ, SPACECOWBOY
+		(https://open.spotify.com/track/5Him4EuQu3x2yKG7ZVv4hl)
+	Fly Away With Me, NCT 127
+		(https://open.spotify.com/track/5uTprTAUORprODnl383LKx)
+	Underwater, Monsta X
+		(https://open.spotify.com/track/0IeRuCKihaeLK7QQEcbliI)
+	UGLY - KR Ver., 2NE1
+		(https://open.spotify.com/track/3hV1cFfGqtVEmsuL2lLNUX)
+	OUTTA MY HEAD, Sik-K
+		(https://open.spotify.com/track/1AwRGa0nhZ0nxciVPOhhcm)
 
-9 : 648 tracks (11.43%)
-	血、汗、涙 - Japanese ver., BTS
-		(https://open.spotify.com/track/6u1ILVDFXcmQGQGCA3h849)
-	24/7=Heaven, BTS
-		(https://open.spotify.com/track/0jIgXRAgDqQtGsnfwTfGmb)
-	Celebration!!, VIXX
-		(https://open.spotify.com/track/5LwPezYgMXtpcroOyq2OiY)
-	Moonlight, INFINITE
-		(https://open.spotify.com/track/6ETrwE2RTjQwqpGyCiESLA)
-	활활 Burn It Up - Prequel Remix, Wanna One
-		(https://open.spotify.com/track/7dvhq9w1WDfQPUdISAOBzt)
-	Burn It Up (Prequel Remix), Wanna One
-		(https://open.spotify.com/track/25TrgjymsethM52rFYp45b)
-	Magic Spell, AOA
-		(https://open.spotify.com/track/4zWr5CtE4e6mrvy5E59gd8)
-	진심 All My Heart, SUPER JUNIOR
-		(https://open.spotify.com/track/00D1CbXY8vFxXEmndW6CkB)
-	December, 4Minute
-		(https://open.spotify.com/track/1ookfcAwCdsJJw0cgOzLCg)
-	DON'T STOP THE MUSIC - 2012 NEW EVOLUTION in Japan ver., 2NE1
-		(https://open.spotify.com/track/5qMa1eIK1zXUCpF2Q7VrZM)
-	EL DORADO, EXO
-		(https://open.spotify.com/track/0qWhCGgRoEKAUuwJKVLJgY)
-	EL DORADO 黄金国 - Chinese Version, EXO
-		(https://open.spotify.com/track/4EXHikXKWAH3jESsye6tN7)
-	EL DORADO (黄金国) - Chinese Version, EXO
-		(https://open.spotify.com/track/2EKVpzNCtRrZIemSm6sDYZ)
-	A-TEEN, SEVENTEEN
-		(https://open.spotify.com/track/5P0Uo1LqAgvFuxabQMe81X)
-	CAN'T NOBODY - 2012 NEW EVOLUTION in Japan ver., 2NE1
-		(https://open.spotify.com/track/03p5HbKEEslLAWw1E8i0XS)
-
-7 : 553 tracks (9.75%)
-	Jelly Jelly, TWICE
-		(https://open.spotify.com/track/6gxdnBlKDxP4pGk7k7uWIP)
-	Suki ni Nacchaudarou? - IZ*ONE Ver., IZ*ONE
-		(https://open.spotify.com/track/1ptM5l7tbT3QCbvYjtBEpV)
-	ZigZag, ONEUS
-		(https://open.spotify.com/track/6N027QSI1jEcam43u4zizI)
-	Go for it, BTOB
-		(https://open.spotify.com/track/6MFZG8o9DtrnogPAIzec7J)
-	Booster, Stray Kids
-		(https://open.spotify.com/track/0d0dnERp81YYz95fuakZb5)
-	XYZ, Girls' Generation
-		(https://open.spotify.com/track/2oAizQFMlBKmvtmMpRQXoY)
-	Baby it's you (Du Jun & Gi Kwang Duet), Beast
-		(https://open.spotify.com/track/3FvFRe955FFmZgWci9J3YL)
-	Runaway, SUPER JUNIOR
-		(https://open.spotify.com/track/5z43vxq6VFvAUZUUiHl0cl)
-	LOVE GIRL - ACOUSTIC VER., CNBLUE
-		(https://open.spotify.com/track/3ddTFT95mnAusf0SqY76vy)
-	Polaris, ASTRO
-		(https://open.spotify.com/track/1DsMVek1kGYrVbm3TADG6y)
-	Get going, TVXQ!
-		(https://open.spotify.com/track/4DPWtjWoAe1T2HLyUYYZwI)
-	4242, N.Flying
-		(https://open.spotify.com/track/3PjtrtSioUnVmzfJi2Bz7Y)
-	YTMOB (You Turn Me On Baby), Golden Child
-		(https://open.spotify.com/track/0dVQjlLhj00kfDBarTqSTp)
-	기대해, Girl's Day
-		(https://open.spotify.com/track/4aIhqSBHhVeUeIFX2TuLNA)
-	Cocktail Love 칵테일 사랑, GFRIEND
-		(https://open.spotify.com/track/7DJijlEfd3ueo01WKXGAVM)
-
-2 : 548 tracks (9.66%)
+9 : 1022 tracks (12.49%)
+	Disaster, Monsta X
+		(https://open.spotify.com/track/64jsZ8zZKVb9itasZfSkNm)
 	Universe, Mamamoo
 		(https://open.spotify.com/track/5gDC2WGrWTlwfPqe8KtR9f)
+	Young In Love, CHUNG HA
+		(https://open.spotify.com/track/3T2In1aV3rdXSDCDOTNioF)
 	Real Love, ASTRO
 		(https://open.spotify.com/track/1wRofLbfUG88ycVDhgNFmT)
-	Time, AOA
-		(https://open.spotify.com/track/69ST8lIFMrGOQnLgEsyHcN)
-	Take It All, Beast
-		(https://open.spotify.com/track/4yFHDcFx3cG6jjKmXSZDRH)
-	Come Slowly, Girl's Day
-		(https://open.spotify.com/track/6n7jFn3rgC6qWjsYaPJfB8)
-	Dear., Weki Meki
-		(https://open.spotify.com/track/1kd5KmgB0NGiokb0YOoaSZ)
-	HAPPY - KR Version, 2NE1
-		(https://open.spotify.com/track/5AkijyLV5F1AypcMOa2Dj7)
-	HAPPY - KR Ver., 2NE1
-		(https://open.spotify.com/track/7vHmdcCyRoTzL1bfxyNvbP)
-	Bridge the World, NU'EST
-		(https://open.spotify.com/track/739SmrVzj9rEVbmsF5WJED)
-	Bridge the World English ver., NU'EST
-		(https://open.spotify.com/track/4dSgAfEZ4qs9aEuRrWAspl)
-	Case No.L5VE, OH MY GIRL
-		(https://open.spotify.com/track/2luSh81T2pllTbCKc6GSb9)
-	Duet - Two of Us ver., TVXQ!
-		(https://open.spotify.com/track/4hxXH3Q2NTutp5hMilVKfC)
-	Midnight, EXID
-		(https://open.spotify.com/track/3mDM3OJkdzeeUrFiI6vPw7)
-	HAPPY - Japanese ver., 2NE1
-		(https://open.spotify.com/track/4ozoEf4aHCXY28ZOVH3IEj)
-	HAPPY, 2NE1
-		(https://open.spotify.com/track/7hW8nsF8PaXZWv7yoTCpJq)
+	안단테 (Andante), SUPER JUNIOR
+		(https://open.spotify.com/track/27eDmXYfu3F9hkQCcWvpET)
+	Light, ATEEZ
+		(https://open.spotify.com/track/2KnNV0Ahhb5qkK83LKymZE)
+	ALIEN - KR Ver., BOBBY
+		(https://open.spotify.com/track/73HGuV0eert8KI87Q9nI1M)
+	Circle, VIXX
+		(https://open.spotify.com/track/6Ys7xrEbpSfZmbRL3KQt6Z)
+	SELFISH (Feat. Seulgi of Red Velvet), Mamamoo, SEULGI
+		(https://open.spotify.com/track/7bKJmbS7y93C9U2LKvz2PB)
+	Pit-A-Pat, CHUNG HA
+		(https://open.spotify.com/track/53ZFPBFOBsVbohWDYC9AHn)
+	Talk, PENTAGON
+		(https://open.spotify.com/track/4oNSmOJWl15y7rEZGZJmfG)
+	Me Like Yuh (feat. Hoody) [Korean Version], Jay Park, Hoody
+		(https://open.spotify.com/track/40wb1DugiG4c4ztCt9oaWp)
+	이 밤 Tonight, WINNER
+		(https://open.spotify.com/track/4yePoUYIBgTmL5DwOtwhCY)
+	How‘bout you, VIXX
+		(https://open.spotify.com/track/1Y4k23byK3sZFX8zKYr2sl)
+	뒷모습 Steppin', TVXQ!
+		(https://open.spotify.com/track/5DeeAb3urJG2L9yF54guXP)
 
-4 : 544 tracks (9.59%)
+6 : 1015 tracks (12.41%)
+	ON (Feat. Sia), BTS, Sia
+		(https://open.spotify.com/track/5ULNZsgJp1FqZ6JyKJUAFH)
+	ON, BTS
+		(https://open.spotify.com/track/6xmllRxAVXF6il4BOO7GNG)
+	Pine Tree, Wanna One
+		(https://open.spotify.com/track/5VckaOqzEtaTaZjUQqdW6Q)
+	My Way, ATEEZ
+		(https://open.spotify.com/track/7nm5N2yWWlDp3R9wPSGmj8)
+	BOOMBAYAH - Live, BLACKPINK
+		(https://open.spotify.com/track/5SK8ZoIj62LTcRW7OQ8vtZ)
+	For You, CHEN, BAEKHYUN, XIUMIN
+		(https://open.spotify.com/track/7rLvsAO1yb7ElxPhkz60qh)
+	좋은걸 뭐 어떡해 What Can I Do, DAY6
+		(https://open.spotify.com/track/1JezeCx4BBNaJqHlZKXNmj)
+	What Can I Do, DAY6
+		(https://open.spotify.com/track/5kZYlGUkCgNW3stmdn4eYZ)
+	Shoot Out, Monsta X
+		(https://open.spotify.com/track/55Md5fnLfCpXzUATASy6Rk)
+	STAY TOGETHER - “NOLZA in Japan”Ver., 2NE1
+		(https://open.spotify.com/track/5SHxuSMuYWmVFP8c4l73qV)
+	SCREAM - 2012 NEW EVOLUTION in Japan ver., 2NE1
+		(https://open.spotify.com/track/66EW6JO5AnbnkiOqFipxQs)
+	Forever - Chinese Version, EXO
+		(https://open.spotify.com/track/4UjxNXzdlalUi8eDdeFy2C)
+	ANTHEM - 2019 iKON CONTINUE TOUR ENCORE IN SEOUL_2019.1.6, iKON, B.I., BOBBY
+		(https://open.spotify.com/track/6Un3xlZ9GnFANHpMp23Guq)
+	EVERYDAY - REMIX WINNER 2018 EVERYWHERE TOUR IN JAPAN, WINNER
+		(https://open.spotify.com/track/4QiB1xvxvGaEZW722juJ2B)
+	Wonderful Love - EDM Version (Japanese Version), MOMOLAND
+		(https://open.spotify.com/track/3oP5wtO9u5rQYF0pBiPpxe)
+
+8 : 870 tracks (10.64%)
+	Runaway, SUPER JUNIOR
+		(https://open.spotify.com/track/5z43vxq6VFvAUZUUiHl0cl)
+	Get going, TVXQ!
+		(https://open.spotify.com/track/4DPWtjWoAe1T2HLyUYYZwI)
+	Here we come, SISTAR
+		(https://open.spotify.com/track/58Rei4Pv8cUsMe1Wcf8OJM)
+	Booster, Stray Kids
+		(https://open.spotify.com/track/7km2kGOn0JkykuFmXHEN1U)
+	Let It Rain, Epik High
+		(https://open.spotify.com/track/3GB9fqke9qrLiF1m0qMk1h)
+	I DId It For love, BoA
+		(https://open.spotify.com/track/51pULyshR0D9GDdgEKVuBP)
+	Polaris, ASTRO
+		(https://open.spotify.com/track/1DsMVek1kGYrVbm3TADG6y)
+	Let It Rain (feat. 김종완), Epik High, Kim Jong Wan
+		(https://open.spotify.com/track/3bG8MFdLEqTXFtUkr1UrXW)
+	T.T.L ~Time to Love~ - Japanese ver., T-ara
+		(https://open.spotify.com/track/5Fp44wiRyDa3bb4Y7sBQzn)
+	BURNING UP!, SHINee
+		(https://open.spotify.com/track/03dPm6RhOqImrqG6URFl8z)
+	XYZ, Girls' Generation
+		(https://open.spotify.com/track/2oAizQFMlBKmvtmMpRQXoY)
+	Cocktail Love 칵테일 사랑, GFRIEND
+		(https://open.spotify.com/track/7DJijlEfd3ueo01WKXGAVM)
+	I Like That Kiss, Apink
+		(https://open.spotify.com/track/4zhXmSuUeHPhsLlQYkowtV)
+	Suki ni Nacchaudarou? - IZ*ONE Ver., IZ*ONE
+		(https://open.spotify.com/track/1ptM5l7tbT3QCbvYjtBEpV)
+	B-DAY, iKON
+		(https://open.spotify.com/track/2XftcRCC1XlDmgQcWWcX7X)
+
+4 : 606 tracks (7.41%)
+	Feelin' (feat.Eric Nam), Ailee
+		(https://open.spotify.com/track/006hFuDtzMlEIewYjFiIAi)
+	Hey(Inst.), Paul Kim
+		(https://open.spotify.com/track/0DLXKhJJQx6b7njWkzR9ne)
 	Brighter, THE BOYZ
 		(https://open.spotify.com/track/1yaaJIALI5bMkUinWr7PyZ)
-	You & I, WJSN
-		(https://open.spotify.com/track/4EdcxtKJpFhVk4REpWhCJk)
-	Magic Shop, BTS
-		(https://open.spotify.com/track/2tMBCYj22KxtmkAACIvvk4)
-	Monologue, INFINITE
-		(https://open.spotify.com/track/4UIeWxW56wDKMR7fG1PKMm)
+	Hooka, HYUKOH
+		(https://open.spotify.com/track/11BtcXTLwj3EEwF6cTbUqf)
 	Viva, TVXQ!
 		(https://open.spotify.com/track/3GKhGMcoNZraOCVJ7jNW5p)
-	SWEETEST THING - Instrumental, SEVENTEEN
-		(https://open.spotify.com/track/3CeRkiVlztamz6LuqQICAU)
-	Thanks - Japanese Ver., INFINITE
-		(https://open.spotify.com/track/6x8uBS99y2tOCeoWWLcuoJ)
-	Inner Child, BTS
-		(https://open.spotify.com/track/6N1dT3gHkwIXxLD5NW5kjM)
-	너라서, ASTRO
-		(https://open.spotify.com/track/0nId3fkiTV1cPTdvw9Jp4U)
-	BLUE - KR Ver., BIGBANG
-		(https://open.spotify.com/track/3d6F2aVQ2r0bqnUtSa44Tg)
-	Blessed, CNBLUE
-		(https://open.spotify.com/track/5ksAffWbckCfT4fcbK7pqm)
-	Too Fast, Oh Junsung
-		(https://open.spotify.com/track/5nplhQcP9svMKMgXDvyYvQ)
-	재연 An Encore, SHINee
-		(https://open.spotify.com/track/65ZIQZETcLlvOWpAadb18G)
-	FOR YOU, SISTAR
-		(https://open.spotify.com/track/5ljeNLay7eeCkokmg8hYPz)
-	Here We Are, GFRIEND
-		(https://open.spotify.com/track/2gcnRgVUNNsvrG8ovhLqyo)
+	A Dreamer, IU
+		(https://open.spotify.com/track/0kW9kEbh9rExtpZzBzAcWU)
+	You & I, WJSN
+		(https://open.spotify.com/track/4EdcxtKJpFhVk4REpWhCJk)
+	Nocturnal, SHAUN
+		(https://open.spotify.com/track/21uTv4ytzeEAW9S3d7Joqv)
+	Magic Shop, BTS
+		(https://open.spotify.com/track/2tMBCYj22KxtmkAACIvvk4)
+	Be With You (Inst.), AKMU
+		(https://open.spotify.com/track/0ng8rPqQpWCre3OiVdDwIX)
+	Girl, Younha
+		(https://open.spotify.com/track/7b61QbePaBYqIzZCdtGxCg)
+	Ordinary Day, BoA
+		(https://open.spotify.com/track/4weDmAgmxWKhEprSQJ0DkF)
+	The Closer (Inst.), VIXX
+		(https://open.spotify.com/track/6CqKlF5dXdJr4e4YiWVyzY)
+	Toy - Japanese Version, Block B
+		(https://open.spotify.com/track/0xTpDXvwqhQmDCBeTjI2HP)
+	Noir 누아르, SUNMI
+		(https://open.spotify.com/track/4yJ6CHGtEjUnMsZ4IMqReH)
 
-5 : 488 tracks (8.61%)
-	Good Night & Good Morning, VIXX
-		(https://open.spotify.com/track/3OIgzwEzIArKHsnTiDFp6a)
-	Forever, Girls' Generation
-		(https://open.spotify.com/track/7g4dl22g2z2WFAasxBSAmA)
-	DEEP INSIDE, AB6IX
-		(https://open.spotify.com/track/4OHGuBU5yUrgsT1emgxMSu)
-	Complete, Girls' Generation
-		(https://open.spotify.com/track/1FgqfiVqrBG4dIckDbvpIe)
-	Easy - Sincere Ver., Beast
-		(https://open.spotify.com/track/5wZfj6uk7kN2rOMuGT8ZXJ)
-	One More Day, 2PM
-		(https://open.spotify.com/track/0exbmrwbLMfouERJUCLLac)
-	0419, Apink
-		(https://open.spotify.com/track/3UCk9LDPHfMCmi8eVpcmXH)
-	LAST DANCE - KR Ver., BIGBANG
-		(https://open.spotify.com/track/7FZjVItt5HfrfcdFVJyY4v)
-	Refresh, CLC
-		(https://open.spotify.com/track/6RoIVIoBQPrR9rWNvefKZH)
-	The Romance Is Over, VIXX
-		(https://open.spotify.com/track/0h4e1Gk5hU3ZgMHGnEtJbP)
-	Outro: House Of Cards, BTS
-		(https://open.spotify.com/track/02XY8gUN95OEMwBUoG1d1h)
-	From Me, GFRIEND
-		(https://open.spotify.com/track/3PShZboDbLo94bPG0l5Ih8)
-	雨のち永遠, NU'EST
-		(https://open.spotify.com/track/18wk6Od1azcKoUQ9dlWspL)
-	중 (...ing), SUPER JUNIOR
-		(https://open.spotify.com/track/6JQOuvbcp58d5M6QHNpkMT)
-	Beautiful Girls - Live, Girls' Generation, YOO YOUNG JIN
-		(https://open.spotify.com/track/2Qi4pqKdTQzwAqVw4tsFCn)
+3 : 582 tracks (7.11%)
+	Thank You, Hoody
+		(https://open.spotify.com/track/7naXCP6i2RXoGloxmc7sLt)
+	Closer, MAX
+		(https://open.spotify.com/track/0l1W4QOmDFAvSiI4l8ZPcR)
+	Closer - MAX Solo, TVXQ!
+		(https://open.spotify.com/track/2KZ8Uohk1J9YHbKfnqDhqt)
+	갈증 (Smoky Heart), TVXQ!
+		(https://open.spotify.com/track/6XRWa1uasDCOV2xQObhWQa)
+	갈증 Smoky Heart, TVXQ!
+		(https://open.spotify.com/track/0YqSgH5A8N5WSma1iJ0VNh)
+	Wi-Fi (2017 월간 윤종신 2월호), Yoon Jong Shin, ZICO
+		(https://open.spotify.com/track/6eSEtLlTf4Il27nKqBYb01)
+	Friday (feat.Jang Yi-jeong of HISTORY), IU
+		(https://open.spotify.com/track/0GsRx0gPft6RmijIwMsKmG)
+	I SEE ME, BoA
+		(https://open.spotify.com/track/0x6xDuiBqkAKviiJj6uiDD)
+	Love Box, SEUNGRI
+		(https://open.spotify.com/track/50nBitLCnKR0IVjtPwKbSD)
+	Fine, GOT7
+		(https://open.spotify.com/track/4D3m4AxclOmmIErg1hLaH2)
+	Just Like You, BTOB
+		(https://open.spotify.com/track/4JfbrOjaXsfOBPAZvchXVv)
+	Mixtape#2, Stray Kids
+		(https://open.spotify.com/track/6Gmy7RKh5jkBNzrNx0q8o2)
+	Mean 심술, Bolbbalgan4
+		(https://open.spotify.com/track/4aEcNpsL9I0GLnD34onI6k)
+	MOON, Woosung
+		(https://open.spotify.com/track/6ynOgp99GXLmBXuHvpGYLB)
+	Telephone, TVXQ!
+		(https://open.spotify.com/track/2il4NEPAMVpnd2ws3Lp0ZA)
 
-1 : 330 tracks (5.82%)
-	DDU-DU DDU-DU - Live - Remix, BLACKPINK
-		(https://open.spotify.com/track/0U9QYwRpAx6zNaOzfqka3h)
-	DDU DDU-DU (Remix Version) - Live, BLACKPINK
-		(https://open.spotify.com/track/1b7PAugOHr8ZjD1Dbj8fON)
-	GO UP - WINNER 2018 EVERYWHERE TOUR IN JAPAN, WINNER
-		(https://open.spotify.com/track/0hxor3XuznkdOrQUqEhjAG)
-	Forever Young - Live, BLACKPINK
-		(https://open.spotify.com/track/3RTSq1hwAr5CHB10SiWeDX)
-	PIRI - Instrumental, DREAMCATCHER
-		(https://open.spotify.com/track/4Me4hl6sj9NA4Ow0XE2E1B)
-	Piri - Inst., DREAMCATCHER
-		(https://open.spotify.com/track/6X4hksNwQ0Ky5cOqZ0kVfU)
-	UP&DOWN - iKONCERT 2016 SHOWTIME TOUR IN JAPAN, iKON
-		(https://open.spotify.com/track/4t62anwBm3YLy14rRhQ4h4)
-	DON'T FLIRT - WINNER JAPAN TOUR 2018 〜We’ll always be young〜, WINNER
-		(https://open.spotify.com/track/5pyMB3vLjvNSJ3s0utS0ar)
-	I'm Fine, BTS
-		(https://open.spotify.com/track/0EQMrxdeiBhry9JCxskko3)
-	CROOKED - Live, BIGBANG
-		(https://open.spotify.com/track/4KEpBBNbapt1BE6dpdJOwY)
-	FAKE LOVE (Rocking Vibe Mix), BTS
-		(https://open.spotify.com/track/3cn6cFQYrUBkKOX8kQ6oiN)
-	HEARTBREAKER - Live, BIGBANG
-		(https://open.spotify.com/track/6YL9emSvtUklqACZvIRDki)
-	HIGH HIGH - BIGBANG JAPAN DOME TOUR 2014~2015 "X", GD & TOP
-		(https://open.spotify.com/track/5g6aAaMpIx455BU2HTDp2W)
-	The Start, THE BOYZ
-		(https://open.spotify.com/track/0XtPfHYT405eV8fpq136r2)
-	121U, DAY6
-		(https://open.spotify.com/track/0r9TstL8bfxb9de4SKXhsq)
+2 : 555 tracks (6.78%)
+	약속, Younha
+		(https://open.spotify.com/track/3AWZibhCXgh7kwInaK3R3S)
+	Till… (Ballad Unit), PENTAGON
+		(https://open.spotify.com/track/3u0In0NMmnrMroW7JPZDRf)
+	Perhaps Love, Eric Nam, CHEEZE
+		(https://open.spotify.com/track/7Mfb2IwRNP8Qi7Ojtpmi37)
+	忘れられない, PENTAGON
+		(https://open.spotify.com/track/5sWgzyBACEcOspSHTbBQJC)
+	파란 봄, Ailee
+		(https://open.spotify.com/track/0KpXBGMi5TPHu8cJGWvNBb)
+	The Reason Why We Broke Up, Younha
+		(https://open.spotify.com/track/5i1jOxUINC61OAvmSMxecQ)
+	텐데...Timeless (Sung by JAEHYUN, DOYOUNG, TAEIL), NCT U
+		(https://open.spotify.com/track/7jb6GXWNyeGUKFaUCpmNX1)
+	シアワセ色の花, TVXQ!
+		(https://open.spotify.com/track/2qEX5im4gblzEa822B1xlT)
+	Long Slow Distance, NCT 127
+		(https://open.spotify.com/track/4JYsIvlneP0nl9dGCDZtAp)
+	One Step Closer, Ailee
+		(https://open.spotify.com/track/7ikCXH9OkXHZAJOLVqQBH2)
+	Don't Go, Jimin Park
+		(https://open.spotify.com/track/11uMvQKlFHqTBqlNh8D5w1)
+	ゆびきり-日本語version-, Younha
+		(https://open.spotify.com/track/5YjMGFF82j1ewVQ3jZ9HoE)
+	My Love My Love My Love, Yoon Mirae
+		(https://open.spotify.com/track/6GgFf1UVSQBskjn7afXsGB)
+	Love words, CHEN
+		(https://open.spotify.com/track/59Pyly0sGOkIdf1n1ctC7j)
+	한마디 Beautiful Life - Instrumental, SHINee
+		(https://open.spotify.com/track/30fb74CZOvHVOSO1Tj8XGH)
 
-6 : 314 tracks (5.54%)
-	Hello Mama, Mamamoo
-		(https://open.spotify.com/track/5lBB4jsRtymWp9jMM236pn)
-	Star Star Star (☆★☆), Girls' Generation
-		(https://open.spotify.com/track/3RpppdGLN08T2IznmCJ4mM)
-	Walking, VIXX
-		(https://open.spotify.com/track/0lV7V7aE3usrCm4weQWbFc)
-	Polaris, DREAMCATCHER
-		(https://open.spotify.com/track/1yjLSsOI4h4MKjCqySQA2V)
-	Miracle, Apink
-		(https://open.spotify.com/track/6Xjxmo4hfQZkNGXieqUmtv)
-	Memory, Mamamoo
-		(https://open.spotify.com/track/5sOFY7dbJuRLcDiwPbl6Qu)
-	Paint Me, Mamamoo
-		(https://open.spotify.com/track/6ltA7bO23089FaMBDbMOEz)
-	DOWNPOUR, I.O.I
-		(https://open.spotify.com/track/51CWs8Gipl0UqDGNA5xekm)
-	歩いている(韓国語バージョン), VIXX
-		(https://open.spotify.com/track/5t67b3xyElJQ8AXbxB7zcS)
-	20090729, T-ara
-		(https://open.spotify.com/track/2Uk4vgPh8GyuQSrj8j41gO)
-	Sleepless Night, SHINee
-		(https://open.spotify.com/track/333zirxLw1oF8XOHi9wqtk)
-	No Longer, NCT 127
-		(https://open.spotify.com/track/3eIFdn5DUUO4CNcpbc8aQw)
+0 : 467 tracks (5.71%)
+	ONE-SIDED LOVE, LEE HI
+		(https://open.spotify.com/track/7rzU18wG1GTv8M7Fr6uAUq)
+	Melted, AKMU
+		(https://open.spotify.com/track/1EEbmmPYWMfMHR0fQVKPvj)
+	Wait for you, SURAN
+		(https://open.spotify.com/track/0dOPACt9Fw0vo4GsreSIMC)
+	너에게 가는 이 길 위에서 (너.이.길), BAEKHYUN
+		(https://open.spotify.com/track/6NyEYh3xw55B8d5WK5kSrf)
+	I'll be there, CHEN
+		(https://open.spotify.com/track/3HqHJaYsBVVDWAe9ha5fGh)
+	Have Yourself A Merry Little Christmas, WENDY, Jay JungJae Moon, Nile Lee
+		(https://open.spotify.com/track/6SmFhQAavuPzBm3OUH1Kzs)
+	Ending Scene, IU
+		(https://open.spotify.com/track/06EMBzxDm2hueehobAlMtm)
+	장미꽃 향기는 바람에 날리고 Rose Scent Breeze, Red Velvet
+		(https://open.spotify.com/track/0hVojZWwk9up4n1Az3nAyY)
+	Bad Day, IU
+		(https://open.spotify.com/track/7aU1spmYtcpbsITNCoxZgv)
+	오늘만, Younha
+		(https://open.spotify.com/track/77SSOIL13u7wys0upR0ZwF)
+	한 사람 얘기, Davichi
+		(https://open.spotify.com/track/0Ad1xpTrUJeSS7VuBCVPxK)
+	사랑 알 수 없나봐 Inexplicable, Paul Kim
+		(https://open.spotify.com/track/76WPttwB3owrbPbyn4vSKh)
+	Lazybones, TVXQ!
+		(https://open.spotify.com/track/1amKahLPpoMd2alfJTpEHL)
+	게으름뱅이 Lazybones, TVXQ!
+		(https://open.spotify.com/track/3rznpAt1bF1YXm14owQcxx)
+	In a Long Dream 긴 꿈에서, CHEEZE
+		(https://open.spotify.com/track/2COpI174I7hdU2omQgTP1n)
+
+1 : 348 tracks (4.25%)
+	Thank you (Jinho, Hui), PENTAGON
+		(https://open.spotify.com/track/6GbSL1DhYFxq9x3XyLqure)
+	Hidden Story, Davichi
+		(https://open.spotify.com/track/1DphNLzUFLlqtNDKhcEZPl)
 	Smile Flower, SEVENTEEN
 		(https://open.spotify.com/track/054sQZ2qmw0Ya7N0XSxl3j)
-	No Longer - Live, NCT 127
-		(https://open.spotify.com/track/2bab6nwB33Enj7wUYVPu3m)
-	Resemble, VIXX
-		(https://open.spotify.com/track/3tEEaGMSQlgYVAjMNDjAKY)
-
-8 : 247 tracks (4.36%)
-	nostalgic night, VICTON
-		(https://open.spotify.com/track/7MC2mQvMmir9PM3nAe2SuW)
-	ISLAND - WINNER JAPAN TOUR 2018 〜We’ll always be young〜, WINNER
-		(https://open.spotify.com/track/2k7BK0RoNOJxyJ3LeIG2jN)
-	We Young - Live, EXO
-		(https://open.spotify.com/track/5laYqVeIfqm15Jfv8Z87YR)
-	Show Up, GFRIEND
-		(https://open.spotify.com/track/04O0KN1UbwexkBdc7KNSIb)
-	LOVE IS A LIE - JPN <LIVE>(2014.10.11 Zepp TOKYO), WINNER
-		(https://open.spotify.com/track/5SyHBg4nCMYA4qy5rIcYpC)
-	PIRI~笛を吹け~ - Japanese ver., DREAMCATCHER
-		(https://open.spotify.com/track/1wyWNz7MM4V4U4B8NwWxgi)
-	Piri ~ Fue wo Fuke ~ - Japanese Ver., DREAMCATCHER
-		(https://open.spotify.com/track/1bBSQHoeTAaaKGYHutEr60)
-	Paradise - INFINITE EFFECT ADVANCE LIVE Version, INFINITE
-		(https://open.spotify.com/track/5nlUbhkodBwNJemVICZU5L)
-	Boomerang - Live, EXO
-		(https://open.spotify.com/track/5ofdbHMgqZGW4KDaLqjSmT)
-	You Are, GOT7
-		(https://open.spotify.com/track/24LGzmtuN7nXmu6CddwjTE)
-	Regular - Korean Version, Live, NCT 127
-		(https://open.spotify.com/track/64MUY6Qk2EErCJu7h0LT7J)
-	The Eve - Live, EXO
-		(https://open.spotify.com/track/60kUDmvefYA4vilWhsIHx9)
-	으르렁 Growl - (Stage Version) [Studio Version], EXO
-		(https://open.spotify.com/track/7g1dyut5yHmXw1UCMDnhEU)
-	너의 세상으로 (Angel), EXO-K
-		(https://open.spotify.com/track/0vZtHRT1Ez9xmmxGRCNF8h)
-	Love Sick - Live, SHINee
-		(https://open.spotify.com/track/5ov59odzVfZe24Hl8q0nRe)
+	Monster - Korean Version, Henry
+		(https://open.spotify.com/track/0ofpH5CvEIjc1H86jDyk8E)
+	Wonder, Eric Nam
+		(https://open.spotify.com/track/0fhr4yUpLhgleQDOyK0RbD)
+	MISSING YOU, 2NE1
+		(https://open.spotify.com/track/6TDLRmfDniPd8G39SkyeTT)
+	Stronger - Chinese Version, EXO
+		(https://open.spotify.com/track/4WvA5wKEoGWcnBHbQfs97O)
+	Lay Your Head on Me, Crush, Garibay
+		(https://open.spotify.com/track/1EmkjyCz5BoYwhuDmLVFh4)
+	Smile Flower - Japanese ver., SEVENTEEN
+		(https://open.spotify.com/track/3RyK84tUGz7qYtXIiEC95m)
+	キミのとなりで, BoA
+		(https://open.spotify.com/track/25H5OxyKYqfDXGEZrzYxco)
+	오늘까지만 아파할 거야, T-ara
+		(https://open.spotify.com/track/0i16uIMrlzA91u4Ls0cQji)
+	London, Yerin Baek
+		(https://open.spotify.com/track/0ePctWkiHJjr6lDqHEvqnj)
+	혼자 두지 마 Don't leave me alone, Yerin Baek
+		(https://open.spotify.com/track/4aDtcFPvjKpywRG8AYhC0C)
+	If You Love Her, SHINee
+		(https://open.spotify.com/track/5ODlbJkw0AApbiBsxrNmVk)
+	String, Colde, sunwoojunga
+		(https://open.spotify.com/track/6V0cdiNRgprv11NGheX87j)
 
