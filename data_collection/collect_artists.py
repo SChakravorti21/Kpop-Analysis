@@ -3,9 +3,7 @@ import errno
 import sys
 import json
 import math
-import spotipy
 import utils
-from spotipy.oauth2 import SpotifyClientCredentials
 
 SEARCH_LIMIT = 50
 GENRE_FILES  = { "k-pop"    : "data/kpop.json",

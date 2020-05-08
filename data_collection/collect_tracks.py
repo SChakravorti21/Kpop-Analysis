@@ -1,9 +1,7 @@
 import os
 import json
-import spotipy
 import utils
 from time import sleep
-from spotipy.oauth2 import SpotifyClientCredentials
 
 
 sp = utils.get_spotipy_instance()
@@ -65,7 +63,7 @@ def get_kpop_tracks(artists_file: str):
     return tracks
 
 
-def output_track_features(tracks, output_path, throttle=False):
+def get_track_features(tracks, throttle=False):
     all_tracks = []
 
     for track_batch in utils.batches(tracks, 50):
@@ -76,6 +74,12 @@ def output_track_features(tracks, output_path, throttle=False):
 
         if throttle:
             sleep(1.0)
+
+    return all_tracks
+
+
+def output_track_features(tracks, output_path, throttle=False):
+    all_tracks = get_track_features(tracks, throttle=throttle)
 
     # Sometimes getting audio features might fail?
     # In any case, null values make it impossible to load
