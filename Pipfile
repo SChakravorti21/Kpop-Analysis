@@ -10,6 +10,7 @@ spotipy = "*"
 pyspark = "*"
 matplotlib = "*"
 seaborn = "*"
+scikit-learn = "*"
 
 [requires]
 python_version = "3.6"
