@@ -8,6 +8,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from enum import Enum
 from pprint import pprint
+from sklearn.neighbors import KNeighborsClassifier
 from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.neural_network import MLPClassifier
 from sklearn import metrics
@@ -56,12 +57,16 @@ class PlaylistClassifier():
             self.model_path = os.path.join("prediction", "models", "gbt")
         elif self.model_type == ModelType.NeuralNetwork:
             self.model_path = os.path.join("prediction", "models", "nn")
+        elif self.model_type == ModelType.KNearestNeighbors:
+            self.model_path = os.path.join("prediction", "models", "knn")
 
     def train(self):
         if self.model_type == ModelType.GradientBoosting:
             pipe, param_grid = self._get_gbt_pipeline()
         elif self.model_type == ModelType.NeuralNetwork:
             pipe, param_grid = self._get_nn_pipeline()
+        elif self.model_type == ModelType.KNearestNeighbors:
+            pipe, param_grid = self._get_knn_pipeline()
 
         # Perform exhaustive grid search to find the best model
         search = GridSearchCV(pipe, param_grid, cv=10, 
@@ -145,6 +150,20 @@ class PlaylistClassifier():
 
         return pipe, param_grid
 
+    def _get_knn_pipeline(self):
+        pipe = Pipeline([
+            ("scale", preprocessing.MinMaxScaler()),
+            ("select", feature_selection.SelectKBest()),
+            ("model", KNeighborsClassifier(weights="uniform"))
+        ])
+
+        param_grid = {
+            "select__k": [4, 6, 8, 10],
+            "model__n_neighbors": [1, 2, 5, 8, 10, 15, 20, 30],
+            "model__leaf_size": [2, 5, 10, 30, 50]
+        }
+
+        return pipe, param_grid
 
 if __name__ == "__main__":
     command = sys.argv[1]
@@ -154,6 +173,8 @@ if __name__ == "__main__":
         model_type = ModelType.GradientBoosting
     elif model_type == "nn":
         model_type = ModelType.NeuralNetwork
+    elif model_type == "knn":
+        model_type = ModelType.KNearestNeighbors
 
     classifier = PlaylistClassifier(model_type)
     
