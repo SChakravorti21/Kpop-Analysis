@@ -4,6 +4,7 @@ import utils
 import joblib
 import pandas as pd
 import numpy as np
+import seaborn as sns
 import matplotlib.pyplot as plt
 from enum import Enum
 from pprint import pprint
@@ -13,7 +14,7 @@ from sklearn import metrics
 from sklearn.pipeline import Pipeline
 from sklearn.compose import ColumnTransformer
 from sklearn import preprocessing, feature_selection
-from sklearn.model_selection import cross_val_score, GridSearchCV
+from sklearn.model_selection import cross_val_score, cross_val_predict, GridSearchCV
 
 CATEGORIES = {
     "Happy":            0,
@@ -51,17 +52,21 @@ class PlaylistClassifier():
         self.X = features[FEATURES]
         self.y = features["playlist"].map(CATEGORIES)
 
+        if self.model_type == ModelType.GradientBoosting:
+            self.model_path = os.path.join("prediction", "models", "gbt")
+        elif self.model_type == ModelType.NeuralNetwork:
+            self.model_path = os.path.join("prediction", "models", "nn")
+
     def train(self):
         if self.model_type == ModelType.GradientBoosting:
             pipe, param_grid = self._get_gbt_pipeline()
-            model_path = os.path.join("prediction", "models", "gbt")
         elif self.model_type == ModelType.NeuralNetwork:
             pipe, param_grid = self._get_nn_pipeline()
-            model_path = os.path.join("prediction", "models", "nn")
 
         # Perform exhaustive grid search to find the best model
         search = GridSearchCV(pipe, param_grid, cv=10, 
-                              n_jobs=-1, verbose=2)
+                              n_jobs=-1, verbose=2,
+                              scoring="f1_macro")
         search = search.fit(self.X, self.y)
         clf = search.best_estimator_
         
@@ -72,8 +77,28 @@ class PlaylistClassifier():
 
         # Save best model to disk
         clf = clf.fit(self.X, self.y)
-        utils.makedirs(model_path)
-        joblib.dump(clf, model_path)
+        utils.makedirs(self.model_path)
+        joblib.dump(clf, self.model_path)
+
+    def stats(self):
+        clf = joblib.load(self.model_path)
+        y_pred = cross_val_predict(clf, self.X, self.y, cv=10)
+
+        confusion_matrix = metrics.confusion_matrix(self.y, y_pred, normalize='true')
+        report = metrics.classification_report(self.y, y_pred)
+        print(report)        
+
+        labels = ["Happy/Chill", "Sad/Sentimental", "Bops/Madness"]
+        fig = plt.figure(figsize=(13, 6))
+        ax = sns.heatmap(confusion_matrix, annot=True, fmt="0.2f", 
+                         cmap="YlGnBu", vmin=0.0, vmax=1.0,
+                         xticklabels=labels, yticklabels=labels)
+        ax.set_xlabel("Predicted Class")
+        ax.set_ylabel("Actual Class")
+        plt.yticks(rotation=0)
+        plt.title("Confusion Matrix")
+        plt.savefig(os.path.join("prediction", "confusion.png"))
+        plt.close()
 
     def _get_gbt_pipeline(self):
         pipe = Pipeline([
@@ -121,12 +146,17 @@ class PlaylistClassifier():
 
 
 if __name__ == "__main__":
-    model_type = sys.argv[1]
-    
+    command = sys.argv[1]
+    model_type  = sys.argv[2]
+
     if model_type == "gbt":
         model_type = ModelType.GradientBoosting
     elif model_type == "nn":
         model_type = ModelType.NeuralNetwork
 
     classifier = PlaylistClassifier(model_type)
-    classifier.train()
+    
+    if command == "train":
+        classifier.train()
+    elif command == "stats":
+        classifier.stats()
