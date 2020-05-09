@@ -11,6 +11,7 @@ from pprint import pprint
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.neural_network import MLPClassifier
+from sklearn.decomposition import PCA
 from sklearn import metrics
 from sklearn.pipeline import Pipeline
 from sklearn.compose import ColumnTransformer
@@ -93,7 +94,7 @@ class PlaylistClassifier():
         report = metrics.classification_report(self.y, y_pred)
         print(report)        
 
-        labels = ["Happy/Chill", "Sad/Sentimental", "Bops/Madness"]
+        labels = self._get_label_names()
         fig = plt.figure(figsize=(13, 6))
         ax = sns.heatmap(confusion_matrix, annot=True, fmt="0.2f", 
                          cmap="YlGnBu", vmin=0.0, vmax=1.0,
@@ -117,10 +118,24 @@ class PlaylistClassifier():
         X = X[X["pred"] != X["actual"]]
         X = X[["name", "pred", "actual"]]
         X = X.sort_values(by=["actual", "pred"])
-        
+
         pd.set_option('display.max_rows', len(X))
-        pd.set_option('display.max_colwidth', -1)
+        pd.set_option('display.max_colwidth', None)
         print(X)
+
+    def pca(self):
+        pca = PCA(n_components=2)
+        X = pca.fit_transform(self.X)
+        
+        classes = self._get_label_names()
+        labels = [classes[label] for label in self.y]
+
+        sns.scatterplot(x=X[:,0], y=X[:,1], hue=labels)
+        plt.title("PCA on Playlist Dataset")
+        plt.xlabel("Principal Component 1")
+        plt.ylabel("Principal Component 2")
+        plt.savefig(os.path.join("prediction", "pca.png"))
+        plt.close()
 
     def _load_model(self):
         return joblib.load(self.model_path)
@@ -148,9 +163,9 @@ class PlaylistClassifier():
         ])
 
         param_grid = {
-            "select__k": [5, 6, 7, 8, 9],
-            "model__n_estimators": [75, 100, 150, 175, 200, 250],
-            "model__min_samples_split": [2, 0.05, 0.1, 0.2],
+            "select__k": [4, 5, 6, 7, 8, 9, 10, 11],
+            "model__n_estimators": [5, 10, 15, 20, 25, 50, 75, 100, 125, 150],
+            # "model__min_samples_split": [2, 0.05],
             "model__max_depth": [1, 2]
         }
 
@@ -196,7 +211,7 @@ class PlaylistClassifier():
 
 if __name__ == "__main__":
     command = sys.argv[1]
-    model_type  = sys.argv[2]
+    model_type  = None if len(sys.argv) < 3 else sys.argv[2]
 
     if model_type == "gbt":
         model_type = ModelType.GradientBoosting
@@ -213,3 +228,5 @@ if __name__ == "__main__":
         classifier.stats()
     elif command == "wrong":
         classifier.misclassified()
+    elif command == "pca":
+        classifier.pca()
