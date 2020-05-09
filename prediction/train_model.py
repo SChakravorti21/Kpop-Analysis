@@ -97,7 +97,8 @@ class PlaylistClassifier():
         ax.set_ylabel("Actual Class")
         plt.yticks(rotation=0)
         plt.title("Confusion Matrix")
-        plt.savefig(os.path.join("prediction", "confusion.png"))
+        basename = os.path.basename(self.model_path)
+        plt.savefig(os.path.join("prediction", f"confusion_{basename}.png"))
         plt.close()
 
     def _get_gbt_pipeline(self):
