@@ -16,7 +16,13 @@ from sklearn import metrics
 from sklearn.pipeline import Pipeline
 from sklearn.compose import ColumnTransformer
 from sklearn import preprocessing, feature_selection
-from sklearn.model_selection import cross_val_score, cross_val_predict, GridSearchCV
+from sklearn.model_selection import (
+    cross_val_score,
+    cross_val_predict,
+    GridSearchCV,
+    StratifiedKFold,
+    LeaveOneOut
+)
 
 CATEGORIES = {
     "Happy":            0,
@@ -70,12 +76,12 @@ class PlaylistClassifier():
             pipe, param_grid = self._get_knn_pipeline()
 
         # Perform exhaustive grid search to find the best model
-        search = GridSearchCV(pipe, param_grid, cv=10, 
+        search = GridSearchCV(pipe, param_grid, cv=10,
                               n_jobs=-1, verbose=2,
                               scoring="f1_macro")
         search = search.fit(self.X, self.y)
         clf = search.best_estimator_
-        
+
         # Just to see what were the optimal hyperparameters
         print("\n\nAccuracy: %0.2f " % (search.best_score_))
         print(clf[-2])
@@ -92,11 +98,11 @@ class PlaylistClassifier():
 
         confusion_matrix = metrics.confusion_matrix(self.y, y_pred, normalize='true')
         report = metrics.classification_report(self.y, y_pred)
-        print(report)        
+        print(report)
 
         labels = self._get_label_names()
         fig = plt.figure(figsize=(13, 6))
-        ax = sns.heatmap(confusion_matrix, annot=True, fmt="0.2f", 
+        ax = sns.heatmap(confusion_matrix, annot=True, fmt="0.2f",
                          cmap="YlGnBu", vmin=0.0, vmax=1.0,
                          xticklabels=labels, yticklabels=labels)
         ax.set_xlabel("Predicted Class")
@@ -126,7 +132,7 @@ class PlaylistClassifier():
     def pca(self):
         pca = PCA(n_components=2)
         X = pca.fit_transform(self.X)
-        
+
         classes = self._get_label_names()
         labels = [classes[label] for label in self.y]
 
@@ -142,7 +148,7 @@ class PlaylistClassifier():
 
     def _get_label_names(self):
         labels_map = {}
-        
+
         for k, v in CATEGORIES.items():
             labels_map.setdefault(v, []).append(k)
 
@@ -153,8 +159,8 @@ class PlaylistClassifier():
     def _get_gbt_pipeline(self):
         pipe = Pipeline([
             ("one-hot", ColumnTransformer([
-                ("key_category", 
-                 preprocessing.OneHotEncoder(handle_unknown="ignore"), 
+                ("key_category",
+                 preprocessing.OneHotEncoder(handle_unknown="ignore"),
                  ["key"])
             ], remainder="passthrough")),
             ("scale", preprocessing.MinMaxScaler()),
@@ -163,7 +169,7 @@ class PlaylistClassifier():
         ])
 
         param_grid = {
-            "select__k": [4, 5, 6, 7, 8, 9, 10, 11],
+            "select__k": [5, 6, 7, 8, 9, 10, 11],
             "model__n_estimators": [5, 10, 15, 20, 25, 50, 75, 100, 125, 150],
             # "model__min_samples_split": [2, 0.05],
             "model__max_depth": [1, 2]
@@ -174,13 +180,13 @@ class PlaylistClassifier():
     def _get_nn_pipeline(self):
         pipe = Pipeline([
             ("one-hot", ColumnTransformer([
-                ("key_category", 
-                 preprocessing.OneHotEncoder(handle_unknown="ignore"), 
+                ("key_category",
+                 preprocessing.OneHotEncoder(handle_unknown="ignore"),
                  ["key"])
             ], remainder="passthrough")),
             ("scale", preprocessing.StandardScaler()),
             ("select", feature_selection.SelectKBest()),
-            ("model", MLPClassifier(solver="adam", max_iter=5000, 
+            ("model", MLPClassifier(solver="adam", max_iter=5000,
                                     early_stopping=True, n_iter_no_change=5))
         ])
 
@@ -221,7 +227,7 @@ if __name__ == "__main__":
         model_type = ModelType.KNearestNeighbors
 
     classifier = PlaylistClassifier(model_type)
-    
+
     if command == "train":
         classifier.train()
     elif command == "stats":
