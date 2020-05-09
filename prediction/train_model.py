@@ -32,18 +32,14 @@ CATEGORIES = {
     "Madness":          2
 }
 
-FEATURES = ["danceability",
-            "energy",
-            "key",
-            "loudness",
-            "mode",
-            "speechiness",
-            "acousticness",
-            "instrumentalness",
-            "liveness",
-            "valence",
-            "tempo",
-            "explicit"]
+FEATURES    = ["danceability", "energy", "key",
+               "loudness", "mode", "speechiness",
+               "acousticness", "instrumentalness",
+               "liveness", "valence", "tempo", "explicit"]
+
+CONTINUOUS  = ["danceability", "energy", 
+               "speechiness", "acousticness",
+               "liveness", "valence", "tempo"]
 
 class ModelType(Enum):
     GradientBoosting    = 0
@@ -130,16 +126,27 @@ class PlaylistClassifier():
         print(X)
 
     def pca(self):
-        pca = PCA(n_components=2)
-        X = pca.fit_transform(self.X)
+        # Only do PCA on continuous variables. Categorical
+        # values like `key` are misleading since they make 
+        # it seem like values are really spread out.
+        X = self.X[CONTINUOUS]
+        X = PCA(n_components=3).fit_transform(X)
 
         classes = self._get_label_names()
         labels = [classes[label] for label in self.y]
 
-        sns.scatterplot(x=X[:,0], y=X[:,1], hue=labels)
-        plt.title("PCA on Playlist Dataset")
-        plt.xlabel("Principal Component 1")
-        plt.ylabel("Principal Component 2")
+        plot_df = pd.DataFrame({
+            "PC 1": X[:,0], 
+            "PC 2": X[:,1], 
+            "PC 3": X[:,2], 
+            "cluster": labels
+        })
+        g = sns.PairGrid(plot_df, hue="cluster", palette="coolwarm")
+        g = g.map(sns.scatterplot, linewidths=0.75, edgecolor="w", s=40)
+        g = g.add_legend()
+        g.fig.set_size_inches(10, 10)
+        g.fig.subplots_adjust(top=0.9)
+        g.fig.suptitle("PCA on Playlist Dataset", fontsize=16)
         plt.savefig(os.path.join("prediction", "pca.png"))
         plt.close()
 
@@ -157,22 +164,26 @@ class PlaylistClassifier():
                 in labels_map.items()]
 
     def _get_gbt_pipeline(self):
+        without_key = [feature for feature in FEATURES if feature != "key"]
+
         pipe = Pipeline([
-            ("one-hot", ColumnTransformer([
+            ("scale", ColumnTransformer([
+                ("minmax",
+                 preprocessing.MinMaxScaler(),
+                 without_key),
                 ("key_category",
                  preprocessing.OneHotEncoder(handle_unknown="ignore"),
                  ["key"])
             ], remainder="passthrough")),
-            ("scale", preprocessing.MinMaxScaler()),
-            ("select", feature_selection.SelectKBest()),
+            # ("select", feature_selection.SelectKBest()),
             ("model", GradientBoostingClassifier())
         ])
 
         param_grid = {
-            "select__k": [5, 6, 7, 8, 9, 10, 11],
-            "model__n_estimators": [5, 10, 15, 20, 25, 50, 75, 100, 125, 150],
+            # "select__k": [5, 6, 7, 8, 9, 10, 11],
+            "model__n_estimators": [75, 100, 125, 150, 200, 250, 300],
             # "model__min_samples_split": [2, 0.05],
-            "model__max_depth": [1, 2]
+            "model__max_depth": [1, 2, 3, 4]
         }
 
         return pipe, param_grid
