@@ -47,11 +47,11 @@ class ModelType(Enum):
 class PlaylistClassifier():
     def __init__(self, model_type: ModelType):
         input_path = os.path.join("data", "playlist_features.json")
-        features = pd.read_json(input_path)
+        self.features = pd.read_json(input_path)
 
         self.model_type = model_type
-        self.X = features[FEATURES]
-        self.y = features["playlist"].map(CATEGORIES)
+        self.X = self.features[FEATURES]
+        self.y = self.features["playlist"].map(CATEGORIES)
 
         if self.model_type == ModelType.GradientBoosting:
             self.model_path = os.path.join("prediction", "models", "gbt")
@@ -86,7 +86,7 @@ class PlaylistClassifier():
         joblib.dump(clf, self.model_path)
 
     def stats(self):
-        clf = joblib.load(self.model_path)
+        clf = self._load_model()
         y_pred = cross_val_predict(clf, self.X, self.y, cv=10)
 
         confusion_matrix = metrics.confusion_matrix(self.y, y_pred, normalize='true')
@@ -105,6 +105,35 @@ class PlaylistClassifier():
         basename = os.path.basename(self.model_path)
         plt.savefig(os.path.join("prediction", f"confusion_{basename}.png"))
         plt.close()
+
+    def misclassified(self):
+        clf = self._load_model()
+        y_pred = cross_val_predict(clf, self.X, self.y, cv=10)
+        classes = self._get_label_names()
+
+        X = self.features.copy()
+        X["pred"] = [classes[label] for label in y_pred]
+        X["actual"] = [classes[label] for label in self.y]
+        X = X[X["pred"] != X["actual"]]
+        X = X[["name", "pred", "actual"]]
+        X = X.sort_values(by=["actual", "pred"])
+        
+        pd.set_option('display.max_rows', len(X))
+        pd.set_option('display.max_colwidth', -1)
+        print(X)
+
+    def _load_model(self):
+        return joblib.load(self.model_path)
+
+    def _get_label_names(self):
+        labels_map = {}
+        
+        for k, v in CATEGORIES.items():
+            labels_map.setdefault(v, []).append(k)
+
+        return ["/".join(classes)
+                for label, classes
+                in labels_map.items()]
 
     def _get_gbt_pipeline(self):
         pipe = Pipeline([
@@ -182,3 +211,5 @@ if __name__ == "__main__":
         classifier.train()
     elif command == "stats":
         classifier.stats()
+    elif command == "wrong":
+        classifier.misclassified()

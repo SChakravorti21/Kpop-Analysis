@@ -45,6 +45,10 @@ def get_playlist_tracks():
         # Attach label as well as some additional features
         features["playlist"] = track["playlist"]
         features["explicit"] = int(track["explicit"])
+
+        artist_names = [a["name"] for a in track["artists"]]
+        identifier = f"{track['name']} ({', '.join(artist_names)})"
+        features["name"] = identifier
         filtered.append((track, features))
 
     # Each entry is a tuple of track info and features.
