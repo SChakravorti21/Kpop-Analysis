@@ -8,6 +8,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from enum import Enum
 from pprint import pprint
+from sklearn.svm import SVC
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.neural_network import MLPClassifier
@@ -37,14 +38,15 @@ FEATURES    = ["danceability", "energy", "key",
                "acousticness", "instrumentalness",
                "liveness", "valence", "tempo", "explicit"]
 
-CONTINUOUS  = ["danceability", "energy", 
+CONTINUOUS  = ["danceability", "energy",
                "speechiness", "acousticness",
                "liveness", "valence", "tempo"]
 
 class ModelType(Enum):
-    GradientBoosting    = 0
-    NeuralNetwork       = 1
-    KNearestNeighbors   = 2
+    GradientBoosting    = "gbt"
+    NeuralNetwork       = "nn"
+    KNearestNeighbors   = "knn"
+    SupportVector       = "svm"
 
 
 class PlaylistClassifier():
@@ -55,21 +57,16 @@ class PlaylistClassifier():
         self.model_type = model_type
         self.X = self.features[FEATURES]
         self.y = self.features["playlist"].map(CATEGORIES)
-
-        if self.model_type == ModelType.GradientBoosting:
-            self.model_path = os.path.join("prediction", "models", "gbt")
-        elif self.model_type == ModelType.NeuralNetwork:
-            self.model_path = os.path.join("prediction", "models", "nn")
-        elif self.model_type == ModelType.KNearestNeighbors:
-            self.model_path = os.path.join("prediction", "models", "knn")
+        self.model_path = \
+            os.path.join("prediction", "models", self.model_type.value)
 
     def train(self):
-        if self.model_type == ModelType.GradientBoosting:
-            pipe, param_grid = self._get_gbt_pipeline()
-        elif self.model_type == ModelType.NeuralNetwork:
-            pipe, param_grid = self._get_nn_pipeline()
-        elif self.model_type == ModelType.KNearestNeighbors:
-            pipe, param_grid = self._get_knn_pipeline()
+        pipe, param_grid = {
+            ModelType.GradientBoosting:     self._get_gbt_pipeline(),
+            ModelType.NeuralNetwork:        self._get_nn_pipeline(),
+            ModelType.KNearestNeighbors:    self._get_knn_pipeline(),
+            ModelType.SupportVector:        self._get_svm_pipeline()
+        }[self.model_type]
 
         # Perform exhaustive grid search to find the best model
         search = GridSearchCV(pipe, param_grid, cv=10,
@@ -127,7 +124,7 @@ class PlaylistClassifier():
 
     def pca(self):
         # Only do PCA on continuous variables. Categorical
-        # values like `key` are misleading since they make 
+        # values like `key` are misleading since they make
         # it seem like values are really spread out.
         X = self.X[CONTINUOUS]
         X = PCA(n_components=3).fit_transform(X)
@@ -136,9 +133,9 @@ class PlaylistClassifier():
         labels = [classes[label] for label in self.y]
 
         plot_df = pd.DataFrame({
-            "PC 1": X[:,0], 
-            "PC 2": X[:,1], 
-            "PC 3": X[:,2], 
+            "PC 1": X[:,0],
+            "PC 2": X[:,1],
+            "PC 3": X[:,2],
             "cluster": labels
         })
         g = sns.PairGrid(plot_df, hue="cluster", palette="coolwarm")
@@ -226,17 +223,26 @@ class PlaylistClassifier():
 
         return pipe, param_grid
 
+    def _get_svm_pipeline(self):
+        pipe = Pipeline([
+            ("scale", preprocessing.MinMaxScaler()),
+            ("select", feature_selection.SelectKBest()),
+            ("model", SVC(kernel="poly", max_iter=-1, break_ties=True, probability=True))
+        ])
+
+        param_grid = {
+            "select__k": [4, 5, 6, 8, "all"],
+            "model__degree": [3, 4, 5, 6],
+            "model__C": [0.0001, 0.001, 0.01, 0.1, 1.0, 10.0],
+            "model__gamma": ["scale", "auto"]
+        }
+
+        return pipe, param_grid
+
 if __name__ == "__main__":
     command = sys.argv[1]
-    model_type  = None if len(sys.argv) < 3 else sys.argv[2]
-
-    if model_type == "gbt":
-        model_type = ModelType.GradientBoosting
-    elif model_type == "nn":
-        model_type = ModelType.NeuralNetwork
-    elif model_type == "knn":
-        model_type = ModelType.KNearestNeighbors
-
+    model_type = None if len(sys.argv) < 3 else sys.argv[2]
+    model_type = ModelType(model_type)
     classifier = PlaylistClassifier(model_type)
 
     if command == "train":
