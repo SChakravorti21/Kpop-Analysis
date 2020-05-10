@@ -164,8 +164,8 @@ class PlaylistClassifier():
         without_key = [feature for feature in FEATURES if feature != "key"]
 
         pipe = Pipeline([
-            ("scale", ColumnTransformer([
-                ("minmax",
+            ("transform", ColumnTransformer([
+                ("scale",
                  preprocessing.MinMaxScaler(),
                  without_key),
                 ("key_category",
@@ -186,21 +186,25 @@ class PlaylistClassifier():
         return pipe, param_grid
 
     def _get_nn_pipeline(self):
+        without_key = [feature for feature in FEATURES if feature != "key"]
+        
         pipe = Pipeline([
-            ("one-hot", ColumnTransformer([
+            ("transform", ColumnTransformer([
+                ("scale",
+                 preprocessing.StandardScaler(),
+                 without_key),
                 ("key_category",
                  preprocessing.OneHotEncoder(handle_unknown="ignore"),
                  ["key"])
             ], remainder="passthrough")),
-            ("scale", preprocessing.StandardScaler()),
             ("select", feature_selection.SelectKBest()),
             ("model", MLPClassifier(solver="adam", max_iter=5000,
-                                    early_stopping=True, n_iter_no_change=5))
+                                    early_stopping=True))
         ])
 
         param_grid = {
-            "select__k": [4, 6, 8],
-            "model__alpha": 10.0 ** -np.arange(7, 12),
+            "select__k": [4, 5, 6, 7, 8],
+            "model__alpha": 10.0 ** -np.arange(5, 12),
             "model__hidden_layer_sizes": [(500,), (500, 100), (500, 500)],
             "model__activation": ["relu", "tanh"],
             "model__learning_rate_init": 10.0 ** -np.arange(1, 6)
