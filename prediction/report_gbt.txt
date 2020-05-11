@@ -1,0 +1,98 @@
+              precision    recall  f1-score   support
+
+           0       0.70      0.68      0.69       115
+           1       0.73      0.67      0.70        64
+           2       0.69      0.75      0.72       110
+
+    accuracy                           0.70       289
+   macro avg       0.71      0.70      0.70       289
+weighted avg       0.70      0.70      0.70       289
+
+
+                                                                                    name             pred           actual
+179                                                                          Tempo (EXO)      Happy/Chill     Bops/Madness
+180                                                                      Follow (U-KNOW)      Happy/Chill     Bops/Madness
+181                                                                         EXODUS (EXO)      Happy/Chill     Bops/Madness
+182                                                              내가 미쳐 Going Crazy (EXO)      Happy/Chill     Bops/Madness
+186                                                          CROWN (TOMORROW X TOGETHER)      Happy/Chill     Bops/Madness
+194                                                                Going High (THE BOYZ)      Happy/Chill     Bops/Madness
+201                                                                        HIP (Mamamoo)      Happy/Chill     Bops/Madness
+203                                                            Hands on me (PRODUCE 101)      Happy/Chill     Bops/Madness
+207  tell me tell me (m-flo loves Sik-K & eill & 向井太一, m-flo, Sik-K, eill, Taichi Mukai)      Happy/Chill     Bops/Madness
+209                                                           You Calling My Name (GOT7)      Happy/Chill     Bops/Madness
+212                                                   Regular - Korean Version (NCT 127)      Happy/Chill     Bops/Madness
+215                                                                     BOOM (NCT DREAM)      Happy/Chill     Bops/Madness
+217                                                                  Psycho (Red Velvet)      Happy/Chill     Bops/Madness
+226                                                                  Snapping (CHUNG HA)      Happy/Chill     Bops/Madness
+228                                                                             ON (BTS)      Happy/Chill     Bops/Madness
+229                                                                        Knock (ASTRO)      Happy/Chill     Bops/Madness
+238                                                  항상 (HANGSANG) (j-hope, Supreme Boi)      Happy/Chill     Bops/Madness
+243                                                                        Ma City (BTS)      Happy/Chill     Bops/Madness
+250                                                                Bonnie & Clyde (DEAN)      Happy/Chill     Bops/Madness
+256                                                                 Simon Says (NCT 127)      Happy/Chill     Bops/Madness
+262                                    몸매 Mommae (feat. Ugly Duck) (Jay Park, Ugly Duck)      Happy/Chill     Bops/Madness
+272                                                                 걔 세 I'm Him (WINNER)      Happy/Chill     Bops/Madness
+279                                                    힐끔힐끔 Peep (ONE, Dok2, The Quiett)      Happy/Chill     Bops/Madness
+192                                                 Roller Coaster (TOMORROW X TOGETHER)  Sad/Sentimental     Bops/Madness
+199                                                                Intro(RISE) (TAEYANG)  Sad/Sentimental     Bops/Madness
+213             POP/STARS (K/DA, Madison Beer, (G)I-DLE, Jaira Burns, League of Legends)  Sad/Sentimental     Bops/Madness
+234                                                                      LION ((G)I-DLE)  Sad/Sentimental     Bops/Madness
+266                                                                        Gucci (Jessi)  Sad/Sentimental     Bops/Madness
+12                                                        Boys And Girls (ZICO, Babylon)     Bops/Madness      Happy/Chill
+14                                                              LOVE ME LOVE ME (WINNER)     Bops/Madness      Happy/Chill
+21                                                            BIM BAM BUM (Rocket Punch)     Bops/Madness      Happy/Chill
+26                                                                         FANCY (TWICE)     Bops/Madness      Happy/Chill
+28                                                                          Coffee (BTS)     Bops/Madness      Happy/Chill
+29                                                                    Just One Day (BTS)     Bops/Madness      Happy/Chill
+30                                                                            MAMA (BTS)     Bops/Madness      Happy/Chill
+32                                                                      Best Of Me (BTS)     Bops/Madness      Happy/Chill
+36                                                                     Mikrokosmos (BTS)     Bops/Madness      Happy/Chill
+37                                              BLOSSOM (Prod. Groovyroom) (EUNHA, RAVI)     Bops/Madness      Happy/Chill
+41                                                                       Fever (GFRIEND)     Bops/Madness      Happy/Chill
+43                                                                       BIRTHDAY (SOMI)     Bops/Madness      Happy/Chill
+44                                                              Umpah Umpah (Red Velvet)     Bops/Madness      Happy/Chill
+46                                                                BBoom BBoom (MOMOLAND)     Bops/Madness      Happy/Chill
+50                                                          빨간 맛 Red Flavor (Red Velvet)     Bops/Madness      Happy/Chill
+52                                                         Russian Roulette (Red Velvet)     Bops/Madness      Happy/Chill
+54                                                                      CHEER UP (TWICE)     Bops/Madness      Happy/Chill
+55                                                                   Bingle Bangle (AOA)     Bops/Madness      Happy/Chill
+58                                                      Whatcha Doin' (YESUNG, CHUNG HA)     Bops/Madness      Happy/Chill
+69                                                               Daydream (백일몽) (j-hope)     Bops/Madness      Happy/Chill
+75                                                                       HEAR ME (Sik-K)     Bops/Madness      Happy/Chill
+88                                                                       Search (Elaine)     Bops/Madness      Happy/Chill
+91                                               We don’t talk together (HEIZE, Giriboy)     Bops/Madness      Happy/Chill
+92                                                       And July (HEIZE, Dean, DJ Friz)     Bops/Madness      Happy/Chill
+97                                                 I Wanna Be Yours (Pink Sweat$, Crush)     Bops/Madness      Happy/Chill
+113                                Chicken Noodle Soup (feat. Becky G) (j-hope, Becky G)     Bops/Madness      Happy/Chill
+20                                                                 Love Me Now (NCT 127)  Sad/Sentimental      Happy/Chill
+33                                                                      Pied Piper (BTS)  Sad/Sentimental      Happy/Chill
+35                                                                       Spark (TAEYEON)  Sad/Sentimental      Happy/Chill
+38                                                           Rainbow (Bright) (Ginibini)  Sad/Sentimental      Happy/Chill
+65                                                                           CLMX (KHYO)  Sad/Sentimental      Happy/Chill
+89                                                                         KAZINO (BIBI)  Sad/Sentimental      Happy/Chill
+94                                                                      instagram (DEAN)  Sad/Sentimental      Happy/Chill
+99       All I Wanna Do (feat. Hoody & 로꼬 Loco) [Korean Version] (Jay Park, Hoody, Loco)  Sad/Sentimental      Happy/Chill
+108                                                               Barefoot (Summer Soul)  Sad/Sentimental      Happy/Chill
+111                                                Fool to Love (Kozypop, Ripley, Ranez)  Sad/Sentimental      Happy/Chill
+112                                        Myside (Feat. OHIORABBIT) (ACACY, Ohiorabbit)  Sad/Sentimental      Happy/Chill
+116                                                             스포일러 Spoiler (Epik High)     Bops/Madness  Sad/Sentimental
+128                                                                 GIRLFRIEND (BIGBANG)     Bops/Madness  Sad/Sentimental
+139                                                                           HURT (EXO)     Bops/Madness  Sad/Sentimental
+140                                                               유성우流星雨 Lady Luck (EXO)     Bops/Madness  Sad/Sentimental
+157                                                                  Autumn Leaves (BTS)     Bops/Madness  Sad/Sentimental
+161                                                                       Tomorrow (BTS)     Bops/Madness  Sad/Sentimental
+162                                                                           Rain (BTS)     Bops/Madness  Sad/Sentimental
+165                                                                     Spring Day (BTS)     Bops/Madness  Sad/Sentimental
+169                                                                      Fiction (Beast)     Bops/Madness  Sad/Sentimental
+172                                                                        Toy (Block B)     Bops/Madness  Sad/Sentimental
+121                                                    눈,코,입(Eyes, Noes, Lips) (TAEYANG)      Happy/Chill  Sad/Sentimental
+122                                           Dawn (feat. jeebanoff) (B-BOMB, Jeebanoff)      Happy/Chill  Sad/Sentimental
+136                                                      Mixtape : On Track (Stray Kids)      Happy/Chill  Sad/Sentimental
+145                                                             Ring Ring (Sik-K, Gaeko)      Happy/Chill  Sad/Sentimental
+151                                                                    Mirror (Monsta X)      Happy/Chill  Sad/Sentimental
+152                                                                    KILLING ME (iKON)      Happy/Chill  Sad/Sentimental
+154                                                                     Black Swan (BTS)      Happy/Chill  Sad/Sentimental
+160                 Dream Glow (BTS World Original Soundtrack) - Pt. 1 (BTS, Charli XCX)      Happy/Chill  Sad/Sentimental
+167                                                                   공허해 empty (WINNER)      Happy/Chill  Sad/Sentimental
+175                                                            Only Look At Me (TAEYANG)      Happy/Chill  Sad/Sentimental
+176                                                                        PLAYBOY (EXO)      Happy/Chill  Sad/Sentimental
