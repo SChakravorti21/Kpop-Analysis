@@ -173,14 +173,16 @@ class PlaylistClassifier():
                  ["key"])
             ], remainder="passthrough")),
             # ("select", feature_selection.SelectKBest()),
-            ("model", GradientBoostingClassifier())
+            ("model", GradientBoostingClassifier(n_iter_no_change=5,
+                                                 max_features="auto"))
         ])
 
         param_grid = {
             # "select__k": [5, 6, 7, 8, 9, 10, 11],
             "model__n_estimators": [75, 100, 125, 150, 200, 250, 300],
-            # "model__min_samples_split": [2, 0.05],
-            "model__max_depth": [1, 2, 3, 4]
+            "model__max_leaf_nodes": [2, 3, 4],
+            "model__max_depth": [1, 2, 3, 4],
+            "model__subsample": [0.5, 0.75, 1.0]
         }
 
         return pipe, param_grid
